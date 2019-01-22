@@ -1,0 +1,812 @@
+fileFormatVersion: 2
+guid: 7480fa991c0048d4b8b7d4184617e2e7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base back 015
+    100002: base back 016
+    100004: base back 017
+    100006: base front014
+    100008: base front015
+    100010: base front016
+    100012: base side 029
+    100014: base side 030
+    100016: base side 031
+    100018: base side 032
+    100020: base side 033
+    100022: base side 034
+    100024: Box001
+    100026: Box001 1
+    100028: Box018
+    100030: Box031
+    100032: Box032
+    100034: Box033
+    100036: Box034
+    100038: Box035
+    100040: Box036
+    100042: Box037
+    100044: Box038
+    100046: Box039
+    100048: Box040
+    100050: Box041
+    100052: Box042
+    100054: Box043
+    100056: Box044
+    100058: Box045
+    100060: Box046
+    100062: Box047
+    100064: Box144
+    100066: Box146
+    100068: Box147
+    100070: Box148
+    100072: Box149
+    100074: Box150
+    100076: Box151
+    100078: Box152
+    100080: Box153
+    100082: Box154
+    100084: Box155
+    100086: Box156
+    100088: Box157
+    100090: Box158
+    100092: Box159
+    100094: Box160
+    100096: Box161
+    100098: Cylinder001
+    100100: Cylinder002
+    100102: Cylinder003
+    100104: Cylinder004
+    100106: Cylinder005
+    100108: Cylinder006
+    100110: Cylinder007
+    100112: Cylinder007 1
+    100114: Cylinder008
+    100116: GeoSphere001
+    100118: GeoSphere002
+    100120: GeoSphere003
+    100122: //RootNode
+    100124: pillar 077
+    100126: pillar 078
+    100128: pillar 079
+    100130: pillar 080
+    100132: pillar 081
+    100134: pillar 082
+    100136: pillar 083
+    100138: pillar 084
+    100140: pillar 085
+    100142: pillar 086
+    100144: Plane001
+    100146: Pyramid001
+    100148: Pyramid002
+    100150: Pyramid003
+    100152: roof corner 033
+    100154: roof corner 041
+    100156: roof corner 042
+    100158: roof corner 043
+    100160: roof corner 044
+    100162: roof corner 045
+    100164: roof corner 046
+    100166: roof corner 047
+    100168: roof corner 048
+    100170: roof corner 049
+    100172: roof corner 050
+    100174: roof corner 051
+    100176: roof corner 052
+    100178: roof side 041
+    100180: roof side 042
+    100182: roof side 043
+    100184: roof side 044
+    100186: roof side 045
+    100188: roof side 046
+    100190: roof side 047
+    100192: roof side 048
+    100194: roof side 049
+    100196: roof side 050
+    100198: roof side 051
+    100200: roof side 052
+    100202: roof side corner 041
+    100204: roof side corner 042
+    100206: roof side corner 043
+    100208: roof side corner 044
+    100210: roof side corner 045
+    100212: roof side corner 046
+    100214: roof side corner 047
+    100216: roof side corner 048
+    100218: roof side corner 049
+    100220: roof side corner 050
+    100222: roof side corner 051
+    100224: roof side corner 052
+    100226: roof side side 041
+    100228: roof side side 042
+    100230: roof side side 043
+    100232: roof side side 044
+    100234: roof side side 045
+    100236: roof side side 046
+    100238: roof side side 047
+    100240: roof side side 048
+    100242: roof side side 049
+    100244: roof side side 050
+    100246: roof side side 051
+    100248: roof side side 052
+    100250: roof side small 021
+    100252: roof side small 022
+    100254: roof side small 023
+    100256: roof side small 024
+    100258: roof side small 025
+    100260: roof side small 026
+    100262: roof small 021
+    100264: roof small 022
+    100266: roof small 023
+    100268: roof small 024
+    100270: roof small 025
+    100272: roof small 026
+    100274: roof top 011
+    100276: roof top 012
+    100278: roof top 013
+    100280: roof wall 021
+    100282: roof wall 022
+    100284: roof wall 025
+    100286: roof wall 026
+    100288: water
+    400000: base back 015
+    400002: base back 016
+    400004: base back 017
+    400006: base front014
+    400008: base front015
+    400010: base front016
+    400012: base side 029
+    400014: base side 030
+    400016: base side 031
+    400018: base side 032
+    400020: base side 033
+    400022: base side 034
+    400024: Box001
+    400026: Box001 1
+    400028: Box018
+    400030: Box031
+    400032: Box032
+    400034: Box033
+    400036: Box034
+    400038: Box035
+    400040: Box036
+    400042: Box037
+    400044: Box038
+    400046: Box039
+    400048: Box040
+    400050: Box041
+    400052: Box042
+    400054: Box043
+    400056: Box044
+    400058: Box045
+    400060: Box046
+    400062: Box047
+    400064: Box144
+    400066: Box146
+    400068: Box147
+    400070: Box148
+    400072: Box149
+    400074: Box150
+    400076: Box151
+    400078: Box152
+    400080: Box153
+    400082: Box154
+    400084: Box155
+    400086: Box156
+    400088: Box157
+    400090: Box158
+    400092: Box159
+    400094: Box160
+    400096: Box161
+    400098: Cylinder001
+    400100: Cylinder002
+    400102: Cylinder003
+    400104: Cylinder004
+    400106: Cylinder005
+    400108: Cylinder006
+    400110: Cylinder007
+    400112: Cylinder007 1
+    400114: Cylinder008
+    400116: GeoSphere001
+    400118: GeoSphere002
+    400120: GeoSphere003
+    400122: //RootNode
+    400124: pillar 077
+    400126: pillar 078
+    400128: pillar 079
+    400130: pillar 080
+    400132: pillar 081
+    400134: pillar 082
+    400136: pillar 083
+    400138: pillar 084
+    400140: pillar 085
+    400142: pillar 086
+    400144: Plane001
+    400146: Pyramid001
+    400148: Pyramid002
+    400150: Pyramid003
+    400152: roof corner 033
+    400154: roof corner 041
+    400156: roof corner 042
+    400158: roof corner 043
+    400160: roof corner 044
+    400162: roof corner 045
+    400164: roof corner 046
+    400166: roof corner 047
+    400168: roof corner 048
+    400170: roof corner 049
+    400172: roof corner 050
+    400174: roof corner 051
+    400176: roof corner 052
+    400178: roof side 041
+    400180: roof side 042
+    400182: roof side 043
+    400184: roof side 044
+    400186: roof side 045
+    400188: roof side 046
+    400190: roof side 047
+    400192: roof side 048
+    400194: roof side 049
+    400196: roof side 050
+    400198: roof side 051
+    400200: roof side 052
+    400202: roof side corner 041
+    400204: roof side corner 042
+    400206: roof side corner 043
+    400208: roof side corner 044
+    400210: roof side corner 045
+    400212: roof side corner 046
+    400214: roof side corner 047
+    400216: roof side corner 048
+    400218: roof side corner 049
+    400220: roof side corner 050
+    400222: roof side corner 051
+    400224: roof side corner 052
+    400226: roof side side 041
+    400228: roof side side 042
+    400230: roof side side 043
+    400232: roof side side 044
+    400234: roof side side 045
+    400236: roof side side 046
+    400238: roof side side 047
+    400240: roof side side 048
+    400242: roof side side 049
+    400244: roof side side 050
+    400246: roof side side 051
+    400248: roof side side 052
+    400250: roof side small 021
+    400252: roof side small 022
+    400254: roof side small 023
+    400256: roof side small 024
+    400258: roof side small 025
+    400260: roof side small 026
+    400262: roof small 021
+    400264: roof small 022
+    400266: roof small 023
+    400268: roof small 024
+    400270: roof small 025
+    400272: roof small 026
+    400274: roof top 011
+    400276: roof top 012
+    400278: roof top 013
+    400280: roof wall 021
+    400282: roof wall 022
+    400284: roof wall 025
+    400286: roof wall 026
+    400288: water
+    2100000: No Name
+    2300000: base back 015
+    2300002: base back 016
+    2300004: base back 017
+    2300006: base front014
+    2300008: base front015
+    2300010: base front016
+    2300012: base side 029
+    2300014: base side 030
+    2300016: base side 031
+    2300018: base side 032
+    2300020: base side 033
+    2300022: base side 034
+    2300024: Box001
+    2300026: Box001 1
+    2300028: Box018
+    2300030: Box031
+    2300032: Box032
+    2300034: Box033
+    2300036: Box034
+    2300038: Box035
+    2300040: Box036
+    2300042: Box037
+    2300044: Box038
+    2300046: Box039
+    2300048: Box040
+    2300050: Box041
+    2300052: Box042
+    2300054: Box043
+    2300056: Box044
+    2300058: Box045
+    2300060: Box046
+    2300062: Box047
+    2300064: Box144
+    2300066: Box146
+    2300068: Box147
+    2300070: Box148
+    2300072: Box149
+    2300074: Box150
+    2300076: Box151
+    2300078: Box152
+    2300080: Box153
+    2300082: Box154
+    2300084: Box155
+    2300086: Box156
+    2300088: Box157
+    2300090: Box158
+    2300092: Box159
+    2300094: Box160
+    2300096: Box161
+    2300098: Cylinder001
+    2300100: Cylinder002
+    2300102: Cylinder003
+    2300104: Cylinder004
+    2300106: Cylinder005
+    2300108: Cylinder006
+    2300110: Cylinder007
+    2300112: Cylinder007 1
+    2300114: Cylinder008
+    2300116: GeoSphere001
+    2300118: GeoSphere002
+    2300120: GeoSphere003
+    2300122: pillar 077
+    2300124: pillar 078
+    2300126: pillar 079
+    2300128: pillar 080
+    2300130: pillar 081
+    2300132: pillar 082
+    2300134: pillar 083
+    2300136: pillar 084
+    2300138: pillar 085
+    2300140: pillar 086
+    2300142: Plane001
+    2300144: Pyramid001
+    2300146: Pyramid002
+    2300148: Pyramid003
+    2300150: roof corner 033
+    2300152: roof corner 041
+    2300154: roof corner 042
+    2300156: roof corner 043
+    2300158: roof corner 044
+    2300160: roof corner 045
+    2300162: roof corner 046
+    2300164: roof corner 047
+    2300166: roof corner 048
+    2300168: roof corner 049
+    2300170: roof corner 050
+    2300172: roof corner 051
+    2300174: roof corner 052
+    2300176: roof side 041
+    2300178: roof side 042
+    2300180: roof side 043
+    2300182: roof side 044
+    2300184: roof side 045
+    2300186: roof side 046
+    2300188: roof side 047
+    2300190: roof side 048
+    2300192: roof side 049
+    2300194: roof side 050
+    2300196: roof side 051
+    2300198: roof side 052
+    2300200: roof side corner 041
+    2300202: roof side corner 042
+    2300204: roof side corner 043
+    2300206: roof side corner 044
+    2300208: roof side corner 045
+    2300210: roof side corner 046
+    2300212: roof side corner 047
+    2300214: roof side corner 048
+    2300216: roof side corner 049
+    2300218: roof side corner 050
+    2300220: roof side corner 051
+    2300222: roof side corner 052
+    2300224: roof side side 041
+    2300226: roof side side 042
+    2300228: roof side side 043
+    2300230: roof side side 044
+    2300232: roof side side 045
+    2300234: roof side side 046
+    2300236: roof side side 047
+    2300238: roof side side 048
+    2300240: roof side side 049
+    2300242: roof side side 050
+    2300244: roof side side 051
+    2300246: roof side side 052
+    2300248: roof side small 021
+    2300250: roof side small 022
+    2300252: roof side small 023
+    2300254: roof side small 024
+    2300256: roof side small 025
+    2300258: roof side small 026
+    2300260: roof small 021
+    2300262: roof small 022
+    2300264: roof small 023
+    2300266: roof small 024
+    2300268: roof small 025
+    2300270: roof small 026
+    2300272: roof top 011
+    2300274: roof top 012
+    2300276: roof top 013
+    2300278: roof wall 021
+    2300280: roof wall 022
+    2300282: roof wall 025
+    2300284: roof wall 026
+    2300286: water
+    3300000: base back 015
+    3300002: base back 016
+    3300004: base back 017
+    3300006: base front014
+    3300008: base front015
+    3300010: base front016
+    3300012: base side 029
+    3300014: base side 030
+    3300016: base side 031
+    3300018: base side 032
+    3300020: base side 033
+    3300022: base side 034
+    3300024: Box001
+    3300026: Box001 1
+    3300028: Box018
+    3300030: Box031
+    3300032: Box032
+    3300034: Box033
+    3300036: Box034
+    3300038: Box035
+    3300040: Box036
+    3300042: Box037
+    3300044: Box038
+    3300046: Box039
+    3300048: Box040
+    3300050: Box041
+    3300052: Box042
+    3300054: Box043
+    3300056: Box044
+    3300058: Box045
+    3300060: Box046
+    3300062: Box047
+    3300064: Box144
+    3300066: Box146
+    3300068: Box147
+    3300070: Box148
+    3300072: Box149
+    3300074: Box150
+    3300076: Box151
+    3300078: Box152
+    3300080: Box153
+    3300082: Box154
+    3300084: Box155
+    3300086: Box156
+    3300088: Box157
+    3300090: Box158
+    3300092: Box159
+    3300094: Box160
+    3300096: Box161
+    3300098: Cylinder001
+    3300100: Cylinder002
+    3300102: Cylinder003
+    3300104: Cylinder004
+    3300106: Cylinder005
+    3300108: Cylinder006
+    3300110: Cylinder007
+    3300112: Cylinder007 1
+    3300114: Cylinder008
+    3300116: GeoSphere001
+    3300118: GeoSphere002
+    3300120: GeoSphere003
+    3300122: pillar 077
+    3300124: pillar 078
+    3300126: pillar 079
+    3300128: pillar 080
+    3300130: pillar 081
+    3300132: pillar 082
+    3300134: pillar 083
+    3300136: pillar 084
+    3300138: pillar 085
+    3300140: pillar 086
+    3300142: Plane001
+    3300144: Pyramid001
+    3300146: Pyramid002
+    3300148: Pyramid003
+    3300150: roof corner 033
+    3300152: roof corner 041
+    3300154: roof corner 042
+    3300156: roof corner 043
+    3300158: roof corner 044
+    3300160: roof corner 045
+    3300162: roof corner 046
+    3300164: roof corner 047
+    3300166: roof corner 048
+    3300168: roof corner 049
+    3300170: roof corner 050
+    3300172: roof corner 051
+    3300174: roof corner 052
+    3300176: roof side 041
+    3300178: roof side 042
+    3300180: roof side 043
+    3300182: roof side 044
+    3300184: roof side 045
+    3300186: roof side 046
+    3300188: roof side 047
+    3300190: roof side 048
+    3300192: roof side 049
+    3300194: roof side 050
+    3300196: roof side 051
+    3300198: roof side 052
+    3300200: roof side corner 041
+    3300202: roof side corner 042
+    3300204: roof side corner 043
+    3300206: roof side corner 044
+    3300208: roof side corner 045
+    3300210: roof side corner 046
+    3300212: roof side corner 047
+    3300214: roof side corner 048
+    3300216: roof side corner 049
+    3300218: roof side corner 050
+    3300220: roof side corner 051
+    3300222: roof side corner 052
+    3300224: roof side side 041
+    3300226: roof side side 042
+    3300228: roof side side 043
+    3300230: roof side side 044
+    3300232: roof side side 045
+    3300234: roof side side 046
+    3300236: roof side side 047
+    3300238: roof side side 048
+    3300240: roof side side 049
+    3300242: roof side side 050
+    3300244: roof side side 051
+    3300246: roof side side 052
+    3300248: roof side small 021
+    3300250: roof side small 022
+    3300252: roof side small 023
+    3300254: roof side small 024
+    3300256: roof side small 025
+    3300258: roof side small 026
+    3300260: roof small 021
+    3300262: roof small 022
+    3300264: roof small 023
+    3300266: roof small 024
+    3300268: roof small 025
+    3300270: roof small 026
+    3300272: roof top 011
+    3300274: roof top 012
+    3300276: roof top 013
+    3300278: roof wall 021
+    3300280: roof wall 022
+    3300282: roof wall 025
+    3300284: roof wall 026
+    3300286: water
+    4300000: roof corner 033
+    4300002: base back 015
+    4300004: base front014
+    4300006: base side 029
+    4300008: base side 030
+    4300010: pillar 077
+    4300012: pillar 078
+    4300014: pillar 079
+    4300016: pillar 080
+    4300018: roof corner 041
+    4300020: roof corner 042
+    4300022: roof corner 043
+    4300024: roof corner 044
+    4300026: roof side 041
+    4300028: roof side 042
+    4300030: roof side 043
+    4300032: roof side 044
+    4300034: roof side corner 041
+    4300036: roof side corner 042
+    4300038: roof side corner 043
+    4300040: roof side corner 044
+    4300042: roof side side 041
+    4300044: roof side side 042
+    4300046: roof side side 043
+    4300048: roof side side 044
+    4300050: roof side small 021
+    4300052: roof side small 022
+    4300054: roof small 021
+    4300056: roof small 022
+    4300058: roof top 011
+    4300060: roof wall 021
+    4300062: roof wall 022
+    4300064: Cylinder001
+    4300066: Cylinder002
+    4300068: Cylinder003
+    4300070: base back 016
+    4300072: base front015
+    4300074: base side 031
+    4300076: base side 032
+    4300078: pillar 081
+    4300080: pillar 082
+    4300082: roof corner 045
+    4300084: roof corner 046
+    4300086: roof corner 047
+    4300088: roof corner 048
+    4300090: roof side 045
+    4300092: roof side 046
+    4300094: roof side 047
+    4300096: roof side 048
+    4300098: roof side corner 045
+    4300100: roof side corner 046
+    4300102: roof side corner 047
+    4300104: roof side corner 048
+    4300106: roof side side 045
+    4300108: roof side side 046
+    4300110: roof side side 047
+    4300112: roof side side 048
+    4300114: roof side small 023
+    4300116: roof side small 024
+    4300118: roof small 023
+    4300120: roof small 024
+    4300122: roof top 012
+    4300124: Cylinder004
+    4300126: base back 017
+    4300128: base front016
+    4300130: base side 033
+    4300132: base side 034
+    4300134: pillar 083
+    4300136: pillar 084
+    4300138: pillar 085
+    4300140: pillar 086
+    4300142: roof corner 049
+    4300144: roof corner 050
+    4300146: roof corner 051
+    4300148: roof corner 052
+    4300150: roof side 049
+    4300152: roof side 050
+    4300154: roof side 051
+    4300156: roof side 052
+    4300158: roof side corner 049
+    4300160: roof side corner 050
+    4300162: roof side corner 051
+    4300164: roof side corner 052
+    4300166: roof side side 049
+    4300168: roof side side 050
+    4300170: roof side side 051
+    4300172: roof side side 052
+    4300174: roof side small 025
+    4300176: roof side small 026
+    4300178: roof small 025
+    4300180: roof small 026
+    4300182: roof top 013
+    4300184: roof wall 025
+    4300186: roof wall 026
+    4300188: Pyramid001
+    4300190: Pyramid002
+    4300192: Pyramid003
+    4300194: Cylinder005
+    4300196: Cylinder006
+    4300198: Cylinder007
+    4300200: Cylinder008
+    4300202: Box001
+    4300204: water
+    4300206: Box001
+    4300208: Box018
+    4300210: Box031
+    4300212: Box032
+    4300214: Box033
+    4300216: Box034
+    4300218: Box035
+    4300220: Box036
+    4300222: Box037
+    4300224: Box038
+    4300226: Box039
+    4300228: Box040
+    4300230: Box041
+    4300232: Box042
+    4300234: Box043
+    4300236: Box044
+    4300238: Box045
+    4300240: Box046
+    4300242: Box047
+    4300244: Plane001
+    4300246: Box144
+    4300248: Box146
+    4300250: Box147
+    4300252: Box148
+    4300254: Box149
+    4300256: Box150
+    4300258: Box151
+    4300260: Box152
+    4300262: GeoSphere001
+    4300264: Cylinder007
+    4300266: GeoSphere002
+    4300268: GeoSphere003
+    4300270: Box153
+    4300272: Box154
+    4300274: Box155
+    4300276: Box156
+    4300278: Box157
+    4300280: Box158
+    4300282: Box159
+    4300284: Box160
+    4300286: Box161
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
