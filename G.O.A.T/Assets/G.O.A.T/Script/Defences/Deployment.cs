@@ -41,7 +41,8 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 10)
         {
             cs.bubblesCount -= 10;
-            GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y + 1.5f, selectScript.turretPos.z), Quaternion.identity);
+            // GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y + 1.5f, selectScript.turretPos.z), Quaternion.identity);
+            Debug.Log("Upgraded");
             audio.Play();
             Destroy(selectScript.currentlySelected);
         }

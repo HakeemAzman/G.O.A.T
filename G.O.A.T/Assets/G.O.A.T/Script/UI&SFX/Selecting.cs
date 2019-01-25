@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Selecting : MonoBehaviour
 {
@@ -12,6 +13,13 @@ public class Selecting : MonoBehaviour
 
     public FakeCameraMovement fcm;
 
+    Deployment dScript;
+
+    private void Start()
+    {
+        dScript = FindObjectOfType<Deployment>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,15 +30,22 @@ public class Selecting : MonoBehaviour
 
             if (hit)
             {
-                Debug.Log(hitGrid.collider.name);
-                Debug.Log(turretPos);
+                //Debug.Log(hitGrid.collider.name);
+               // Debug.Log(turretPos);
 
+                //Finding object with "Snowball" and deploying Turret
                 if(hitGrid.collider.tag == "Snowball")
                 {
-                    Debug.Log("Snowball Turret Upgrade");
-                    turretPos = hitGrid.collider.transform.position;
+                    if(currentlySelected != hitGrid.collider.gameObject)
+                    {
+                        turretPos = hitGrid.collider.transform.position;
 
-                    fcm.enabled = false;
+                        GameObject selectedTurrets = hitGrid.collider.transform.Find("Turret").gameObject;
+                        selectedTurrets.SetActive(true);
+                        selectedTurrets.GetComponentInChildren<Button>().onClick.AddListener(dScript.SnowballUpgrade);
+
+                        fcm.enabled = false;     
+                    }
                 }
 
                 //Finding object with "deploy" as child

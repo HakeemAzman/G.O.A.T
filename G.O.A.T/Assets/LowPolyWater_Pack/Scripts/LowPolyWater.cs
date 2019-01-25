@@ -34,7 +34,7 @@ namespace LowPolyWater
         MeshFilter CreateMeshLowPoly(MeshFilter mf)
         {
             mesh = mf.sharedMesh;
-
+            
             //Get the original vertices of the gameobject's mesh
             Vector3[] originalVertices = mesh.vertices;
 
