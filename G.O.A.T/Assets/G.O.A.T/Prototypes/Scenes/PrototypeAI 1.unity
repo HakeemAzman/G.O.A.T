@@ -479,7 +479,6 @@ GameObject:
   - component: {fileID: 571861164}
   - component: {fileID: 571861163}
   - component: {fileID: 571861162}
-  - component: {fileID: 571861161}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -487,18 +486,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!65 &571861161
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 571861160}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.0210283, y: 0.9999998, z: 1}
-  m_Center: {x: 0.010514669, y: 0, z: 0}
 --- !u!23 &571861162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -559,19 +546,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1198376587967338, guid: 8a284d4c9966ed44b8d334e20cb638a2,
     type: 2}
   m_PrefabInternal: {fileID: 783500143}
---- !u!136 &631016306
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 631016302}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 2.33
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &631016311
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -724,7 +698,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4312666033316580, guid: 8a284d4c9966ed44b8d334e20cb638a2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.63
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 4312666033316580, guid: 8a284d4c9966ed44b8d334e20cb638a2, type: 2}
       propertyPath: m_LocalPosition.y
@@ -732,7 +706,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4312666033316580, guid: 8a284d4c9966ed44b8d334e20cb638a2, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -1.56
+      value: -1.17
       objectReference: {fileID: 0}
     - target: {fileID: 4312666033316580, guid: 8a284d4c9966ed44b8d334e20cb638a2, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1050,8 +1024,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.6762385, y: 0.9999998, z: 1}
+  m_Center: {x: 1.8381193, y: 0, z: 0}
 --- !u!23 &919366813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1106,7 +1080,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 1500
+  penguin: {fileID: 631016302}
   pistonGo: {fileID: 571861160}
+  boxColl: {fileID: 919366812}
 --- !u!1 &959984262
 GameObject:
   m_ObjectHideFlags: 0
