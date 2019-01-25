@@ -23,4 +23,9 @@ public class BtnManager : MonoBehaviour {
         Destroy(deploy);
         spawner.SetActive(true);
     }
+
+    public void fastForward()
+    {
+        Time.timeScale = 2;
+    }
 }
