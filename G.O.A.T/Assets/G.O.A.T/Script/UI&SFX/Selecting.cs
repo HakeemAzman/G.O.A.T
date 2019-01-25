@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Selecting : MonoBehaviour
 {
-    public GameObject[] grids;
-
     public GameObject currentlySelected;
 
     public Vector3 placementPos;
+
+    public Vector3 turretPos;
 
     public FakeCameraMovement fcm;
 
@@ -22,8 +22,16 @@ public class Selecting : MonoBehaviour
 
             if (hit)
             {
-                //Debug.Log(hitGrid.collider.name);
-                //Debug.Log(placementPos);
+                Debug.Log(hitGrid.collider.name);
+                Debug.Log(turretPos);
+
+                if(hitGrid.collider.tag == "Snowball")
+                {
+                    Debug.Log("Snowball Turret Upgrade");
+                    turretPos = hitGrid.collider.transform.position;
+
+                    fcm.enabled = false;
+                }
 
                 //Finding object with "deploy" as child
                 if (hitGrid.collider.transform.Find("Deploy"))
@@ -45,7 +53,7 @@ public class Selecting : MonoBehaviour
                             currentlySelected.transform.Find("Deploy").gameObject.SetActive(false);
                         }
 
-                        currentlySelected = hitGrid.collider.gameObject;
+                        currentlySelected = hitGrid.collider.gameObject; //Done by Keefe and Marcus
 
                     }
                 }

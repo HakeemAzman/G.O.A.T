@@ -120,9 +120,10 @@ GameObject:
   - component: {fileID: 114549189283021974}
   - component: {fileID: 54889620108115834}
   - component: {fileID: 82271067778302850}
+  - component: {fileID: 65745860178436988}
   m_Layer: 0
   m_Name: Turret 1
-  m_TagString: Untagged
+  m_TagString: Snowball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -303,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943268145316346}
   m_LocalRotation: {x: -0, y: 0.7059342, z: -0, w: -0.7082774}
-  m_LocalPosition: {x: 0.11815, y: 5.1433, z: -3.3358}
+  m_LocalPosition: {x: -12.5167, y: 7.063, z: 4.1810703}
   m_LocalScale: {x: 0.8044388, y: 0.8044388, z: 0.8044388}
   m_Children:
   - {fileID: 4217431932179388}
@@ -712,6 +713,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65745860178436988
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943268145316346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.9999998, y: 1.7359473, z: 0.9999998}
+  m_Center: {x: 0, y: -0.36797377, z: 0}
 --- !u!82 &82271067778302850
 AudioSource:
   m_ObjectHideFlags: 1
