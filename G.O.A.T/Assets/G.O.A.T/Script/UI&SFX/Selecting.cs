@@ -30,13 +30,15 @@ public class Selecting : MonoBehaviour
 
             if (hit)
             {
-                //Debug.Log(hitGrid.collider.name);
+               // Debug.Log(hitGrid.collider.name);
                // Debug.Log(turretPos);
 
                 //Finding object with "Snowball" and deploying Turret
                 if(hitGrid.collider.tag == "Snowball")
                 {
-                    if(currentlySelected != hitGrid.collider.gameObject)
+                    fcm.enabled = false;
+
+                    if (currentlySelected != hitGrid.collider.gameObject)
                     {
                         turretPos = hitGrid.collider.transform.position;
 
@@ -44,7 +46,12 @@ public class Selecting : MonoBehaviour
                         selectedTurrets.SetActive(true);
                         selectedTurrets.GetComponentInChildren<Button>().onClick.AddListener(dScript.SnowballUpgrade);
 
-                        fcm.enabled = false;     
+                        if (currentlySelected != null)
+                        {
+                            currentlySelected.transform.Find("Turret").gameObject.SetActive(false);
+                        }
+
+                        currentlySelected = hitGrid.collider.gameObject;
                     }
                 }
 
@@ -68,7 +75,7 @@ public class Selecting : MonoBehaviour
                             currentlySelected.transform.Find("Deploy").gameObject.SetActive(false);
                         }
 
-                        currentlySelected = hitGrid.collider.gameObject; //Done by Keefe and Marcus
+                        currentlySelected = hitGrid.collider.gameObject; 
 
                     }
                 }
@@ -76,10 +83,11 @@ public class Selecting : MonoBehaviour
                 if (hitGrid.collider.tag == "Deselect")
                 {
                     fcm.enabled = true;
-
+                    currentlySelected.transform.Find("Turret").gameObject.SetActive(false);
                     if (currentlySelected != null)
                     {
                         currentlySelected.transform.Find("Deploy").gameObject.SetActive(false);
+                       
                         currentlySelected = null;
                     }
                 }

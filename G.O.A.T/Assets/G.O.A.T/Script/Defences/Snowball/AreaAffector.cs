@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AreaAffector : MonoBehaviour {
-    public bool isTriggered = false;
-    public bool startShooting = false;
+public class AreaAffector : MonoBehaviour
+{
+    TurretShooting tsScript;
 
+    private void Start()
+    {
+        tsScript = FindObjectOfType<TurretShooting>();
+        tsScript.enabled = false;
+    }
 
     private void OnTriggerEnter(Collider enter)
     {
         if(enter.gameObject.tag == "Enemies")
         {
-            startShooting = true;
+            //Debug.Log("enter");
+           // tsScript.enabled = true;
         }
     }
 
@@ -19,7 +25,7 @@ public class AreaAffector : MonoBehaviour {
     {
         if (stay.gameObject.tag == "Enemies")
         {
-            isTriggered = true;
+            tsScript.enabled = true;
         }
     }
 
@@ -27,10 +33,12 @@ public class AreaAffector : MonoBehaviour {
     {
         if (exit.gameObject.tag == "Enemies")
         {
-            print("startShooting false");
-            print(exit.name);
-            startShooting = false;
-            isTriggered = false;
+            //tsScript.enabled = false;
         }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        
     }
 }

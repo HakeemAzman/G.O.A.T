@@ -11,6 +11,8 @@ public class TurretShooting : MonoBehaviour
     Transform target;
     EnemyAI enemyScript;
 
+    AreaAffector aaScript;
+
     [Header("Range of fire")]
     public float range = 15f;
 
@@ -31,31 +33,21 @@ public class TurretShooting : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         ssScript = GameObject.FindObjectOfType<ShootStats>();
-        InvokeRepeating("ClosestEnemy", 0f, 1f);
-    }
-
-    private void Update()
-    {
-        LockOnTarget();
-
-        if (fireCountdown <= 0f)
-        {
-            Shoot();
-            fireCountdown = 1f / fireRate;
-        }
-
-        fireCountdown -= Time.deltaTime;
+       
+        InvokeRepeating("ClosestEnemy", 0f, 0.5f);
     }
 
     void ClosestEnemy()
     {
-        GameObject[] enemy = GameObject.FindGameObjectsWithTag(whatToShoot);
-        float shortestDistance = 5;
+        GameObject[] enemy;
+        enemy = GameObject.FindGameObjectsWithTag(whatToShoot);
+        float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
         foreach (GameObject e in enemy)
         {
             float distToEnemy = Vector3.Distance(transform.position, e.transform.position);
+
             if (distToEnemy < shortestDistance)
             {
                 shortestDistance = distToEnemy;
@@ -72,17 +64,25 @@ public class TurretShooting : MonoBehaviour
             target = null;
     }
 
+    private void Update()
+    {
+        LockOnTarget();
+
+        if (fireCountdown <= 0f)
+        {
+            Shoot();
+            fireCountdown = 1f / fireRate;
+        }
+
+        fireCountdown -= Time.deltaTime;
+    }
+
     void LockOnTarget()
     {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-    }
-
-    public void Rotation()
-    {
-        transform.Rotate(new Vector3(0, 90, 0));
     }
 
     public void Shoot()
@@ -94,6 +94,14 @@ public class TurretShooting : MonoBehaviour
             firePos.rotation
             );
         Destroy(bullet, 1f);
+
+        ShootStats ss = bullet.GetComponent<ShootStats>();
+
+        if (ss != null)
+        {
+            ss.Seek(target);
+        }
+        
         audio.Play();
     }
 
@@ -103,4 +111,9 @@ public class TurretShooting : MonoBehaviour
             Destroy(bullet, 1f);
     }
 
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, range);
+    }
 }
