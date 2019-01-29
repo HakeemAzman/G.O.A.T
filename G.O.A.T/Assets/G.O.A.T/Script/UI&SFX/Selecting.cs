@@ -13,10 +13,16 @@ public class Selecting : MonoBehaviour
 
     public FakeCameraMovement fcm;
 
+    [Header ("Deploy and Upgrade Panel")]
+    public GameObject deploymentPanel;
+    public GameObject upgradePanel;
+
     Deployment dScript;
 
     private void Start()
     {
+        deploymentPanel.SetActive(false);
+        upgradePanel.SetActive(false);
         dScript = FindObjectOfType<Deployment>();
     }
 
@@ -42,13 +48,11 @@ public class Selecting : MonoBehaviour
                     {
                         turretPos = hitGrid.collider.transform.position;
 
-                        GameObject selectedTurrets = hitGrid.collider.transform.Find("Turret").gameObject;
-                        selectedTurrets.SetActive(true);
-                        selectedTurrets.GetComponentInChildren<Button>().onClick.AddListener(dScript.SnowballUpgrade);
+                        upgradePanel.SetActive(true);
 
                         if (currentlySelected != null)
                         {
-                            currentlySelected.transform.Find("Turret").gameObject.SetActive(false);
+                            upgradePanel.SetActive(false);
                         }
 
                         currentlySelected = hitGrid.collider.gameObject;
@@ -65,32 +69,37 @@ public class Selecting : MonoBehaviour
                     //Selecting another object?
                     if (currentlySelected != hitGrid.collider.gameObject)
                     {
+                        /*
                         //Setting World Canvas to true
                         GameObject selectedObject = hitGrid.collider.transform.Find("Deploy").gameObject;
                         selectedObject.SetActive(true);
+                        */
+
+                        deploymentPanel.SetActive(true);
 
                         //Deactivate the currently selected object
                         if (currentlySelected != null)
                         {
-                            currentlySelected.transform.Find("Deploy").gameObject.SetActive(false);
+                            deploymentPanel.SetActive(false);
                         }
 
                         currentlySelected = hitGrid.collider.gameObject; 
 
                     }
                 }
+            }
+        }
 
-                if (hitGrid.collider.tag == "Deselect")
-                {
-                    fcm.enabled = true;
-                    currentlySelected.transform.Find("Turret").gameObject.SetActive(false);
-                    if (currentlySelected != null)
-                    {
-                        currentlySelected.transform.Find("Deploy").gameObject.SetActive(false);
-                       
-                        currentlySelected = null;
-                    }
-                }
+        if(Input.GetMouseButtonDown(1))
+        {
+            fcm.enabled = true;
+            upgradePanel.SetActive(false);
+
+            if (currentlySelected != null)
+            {
+                deploymentPanel.SetActive(false);
+
+                currentlySelected = null;
             }
         }
     }

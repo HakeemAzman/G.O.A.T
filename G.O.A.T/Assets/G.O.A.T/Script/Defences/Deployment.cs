@@ -31,6 +31,7 @@ public class Deployment : MonoBehaviour
             cs.bubblesCount -= 30;
             GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
             audio.Play();
+            selectScript.deploymentPanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
         }
     }
@@ -43,11 +44,12 @@ public class Deployment : MonoBehaviour
             cs.bubblesCount -= 10;
             // GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y + 1.5f, selectScript.turretPos.z), Quaternion.identity);
             audio.Play();
+            selectScript.upgradePanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
         }
     }
 
-    public void CameraMovement()
+    public void CameraAndPanel()
     {
         selectScript.fcm.enabled = true;
     }
