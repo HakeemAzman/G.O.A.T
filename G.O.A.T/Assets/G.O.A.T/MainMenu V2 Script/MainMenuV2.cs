@@ -30,5 +30,10 @@ public class MainMenuV2 : MonoBehaviour
         Debug.Log("Quit");
     }
 
+    public void SetFullScreen(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
 
 }

@@ -29,15 +29,12 @@ public class MainMenuTransition : MonoBehaviour {
         else
             m_Anim.SetBool("EncyclopediaBool", false);
 
-        Debug.Log(m_Settings);
-
-
+        //Debug.Log(m_Settings);
     }
 
     public void SettingsTransitition()
     {
         m_Settings = true;
-
     }
 
     public void EncyclopediaTransitition()
