@@ -467,6 +467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: 3
+  enemyFullhealth: 3
   damageTaken: 3
   healthbar: {fileID: 114762673726143930}
 --- !u!114 &114762673726143930

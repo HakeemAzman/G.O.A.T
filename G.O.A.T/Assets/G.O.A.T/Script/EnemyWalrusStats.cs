@@ -7,7 +7,9 @@ public class EnemyWalrusStats : MonoBehaviour
 {
     AudioSource audio;
 
-    public float enemyHealth = 5f;
+    public float enemyHealth;
+
+    public float enemyFullhealth;
 
     public float damageTaken;
 
@@ -29,8 +31,8 @@ public class EnemyWalrusStats : MonoBehaviour
     {
         if (other.gameObject.tag == "Bullet")
         {
-            enemyHealth = enemyHealth - damageTaken;
-            healthbar.fillAmount = enemyHealth / 10f;
+            enemyHealth -= damageTaken;
+            healthbar.fillAmount = enemyHealth / enemyFullhealth;
             if (enemyHealth == 0f)
             {
                 audio.Play();

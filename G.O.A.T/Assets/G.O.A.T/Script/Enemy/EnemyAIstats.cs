@@ -9,6 +9,8 @@ public class EnemyAIstats : MonoBehaviour
 
     public float enemyHealth = 3f;
 
+    public float enemyFullhealth;
+
     public float damageTaken;
 
     public Image healthbar;
@@ -30,7 +32,7 @@ public class EnemyAIstats : MonoBehaviour
         if(other.gameObject.tag == "Bullet")
         {
             enemyHealth = enemyHealth - damageTaken;
-            healthbar.fillAmount = enemyHealth / 3f;
+            healthbar.fillAmount = enemyHealth / enemyFullhealth;
             if (enemyHealth == 0f)
             {
                 audio.Play();

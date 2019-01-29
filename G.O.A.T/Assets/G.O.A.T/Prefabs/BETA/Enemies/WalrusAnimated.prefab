@@ -94,7 +94,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1577207752553800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -37.556885, y: -6.661808, z: 9.167703}
+  m_LocalPosition: {x: -35.519676, y: 2.7494001, z: 18.261162}
   m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
   m_Children:
   - {fileID: 224359789923724856}
@@ -278,7 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d8cbb7381494142b03708dbb87935e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 10
+  enemyHealth: 12
+  enemyFullhealth: 12
   damageTaken: 5
   healthbar: {fileID: 114026208330081534}
 --- !u!114 &114625491986332974
