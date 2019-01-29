@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenuV2 : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class MainMenuV2 : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void PlayGame()
+    {
+        SceneManager.LoadScene("MainLevel");
     }
 
     public void QuitGame()
