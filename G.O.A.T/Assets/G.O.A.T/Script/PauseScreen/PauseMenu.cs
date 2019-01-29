@@ -40,6 +40,12 @@ public class PauseMenu : MonoBehaviour {
 
     public void ToMainMenu()
     {
-        SceneManager.LoadScene("Title Screen");
+        SceneManager.LoadScene("MainMenu");
     }
+
+    public void ToEncyclopedia()
+    {
+        SceneManager.LoadScene("Encyclopedia");
+    }
+
 }
