@@ -63,6 +63,7 @@ public class NSpawner : MonoBehaviour
                     waveNumber++;
             }
         }
+
         //if (waveNumber == 2 || waveNumber == 5 || waveNumber == 8)
         //{
             

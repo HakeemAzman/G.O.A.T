@@ -26,9 +26,9 @@ public class Deployment : MonoBehaviour
     //Deploys a defence using the position of the select grid.
     public void DeployTower()
     {
-        if(cs.bubblesCount >= 30)
+        if(cs.bubblesCount >= 50)
         {
-            cs.bubblesCount -= 30;
+            cs.bubblesCount -= 50;
             GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Snowball Turret";
             audio.Play();
@@ -40,9 +40,9 @@ public class Deployment : MonoBehaviour
     //Deploys an upgraded snowball
     public void SnowballUpgrade()
     {
-        if (cs.bubblesCount >= 10)
+        if (cs.bubblesCount >= 120)
         {
-            cs.bubblesCount -= 10;
+            cs.bubblesCount -= 120;
             GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
             child.name = "Snowball Turret - Level 2";
             audio.Play();
