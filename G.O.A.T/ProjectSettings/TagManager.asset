@@ -12,6 +12,7 @@ TagManager:
   - Bullet
   - Deselect
   - Snowball
+  - Defence
   layers:
   - Default
   - TransparentFX
