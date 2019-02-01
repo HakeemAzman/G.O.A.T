@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Deployment : MonoBehaviour
 {
-    [Header("Bullet Instantiate Point")]
+    [Header("Defences")]
     public GameObject turret;
+    public GameObject poisonFish;
 
     [Header("Snowball Upgrade")]
     public GameObject snowballUpgrade;
@@ -31,6 +32,20 @@ public class Deployment : MonoBehaviour
             cs.bubblesCount -= 50;
             GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Snowball Turret";
+            audio.Play();
+            selectScript.deploymentPanel.SetActive(false);
+            Destroy(selectScript.currentlySelected);
+        }
+    }
+
+    //Deploys a defence using the position of the select grid.
+    public void DeployFishDispenser()
+    {
+        if (cs.bubblesCount >= 80)
+        {
+            cs.bubblesCount -= 80;
+            GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
+            child.name = "Poison Fish Dispenser";
             audio.Play();
             selectScript.deploymentPanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
