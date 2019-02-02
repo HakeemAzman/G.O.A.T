@@ -24,13 +24,14 @@ public class Deployment : MonoBehaviour
         selectScript = FindObjectOfType<Selecting>();
 	}
 
+    #region All Deployments/Remove
     //Deploys a defence using the position of the select grid.
     public void DeployTower()
     {
         if(cs.bubblesCount >= 50)
         {
             cs.bubblesCount -= 50;
-            GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Snowball Turret";
             audio.Play();
             selectScript.deploymentPanel.SetActive(false);
@@ -44,7 +45,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 80)
         {
             cs.bubblesCount -= 80;
-            GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.5f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Poison Fish Dispenser";
             audio.Play();
             selectScript.deploymentPanel.SetActive(false);
@@ -61,10 +62,23 @@ public class Deployment : MonoBehaviour
             GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
             child.name = "Snowball Turret - Level 2";
             audio.Play();
-            selectScript.upgradePanel.SetActive(false);
+            selectScript.upgradeSnowballPanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
         }
     }
+
+    public void Rotation()
+    {
+        selectScript.currentlySelected.transform.Rotate(0, 90, 0);
+    }
+
+    public void RemoveDefences()
+    {
+        cs.bubblesCount += 20;
+        Destroy(selectScript.currentlySelected);
+        selectScript.upgradeSnowballPanel.SetActive(false);
+    }
+    #endregion
 
     public void CameraAndPanel()
     {

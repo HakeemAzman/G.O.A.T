@@ -8,24 +8,32 @@ public class Selecting : MonoBehaviour
     public GameObject currentlySelected;
 
     public Vector3 placementPos;
+    public Quaternion placementRot;
 
     public Vector3 turretPos;
+    public Quaternion turretRot;
 
     public FakeCameraMovement fcm;
 
     [Header ("Deploy and Upgrade Panel")]
     public GameObject deploymentPanel;
-    public GameObject upgradePanel;
+    public GameObject upgradeSnowballPanel;
+    public GameObject upgradeFishDispencerPanel;
+    public GameObject upgradePistonPanel;
 
     Deployment dScript;
+    bool hasDeleted = true;
 
     private void Start()
     {
         deploymentPanel.SetActive(false);
-        upgradePanel.SetActive(false);
+        upgradeSnowballPanel.SetActive(false);
+        upgradeFishDispencerPanel.SetActive(false);
+        upgradePistonPanel.SetActive(false);
         dScript = FindObjectOfType<Deployment>();
     }
 
+    #region Selection/Deselection
     // Update is called once per frame
     void Update()
     {
@@ -36,64 +44,89 @@ public class Selecting : MonoBehaviour
 
             if (hit)
             {
-               // Debug.Log(hitGrid.collider.name);
-               // Debug.Log(turretPos);
-
-                //Finding object with "Snowball" and deploying Turret
-                if(hitGrid.collider.tag == "Snowball")
-                {
-                    fcm.enabled = false;
-
-                    if (currentlySelected != hitGrid.collider.gameObject)
-                    {
-                        turretPos = hitGrid.collider.transform.position;
-
-                        upgradePanel.SetActive(true);
-
-                        if (currentlySelected != null)
-                        {
-                            upgradePanel.SetActive(false);
-                        }
-
-                        currentlySelected = hitGrid.collider.gameObject;
-                    }
-                }
+                // Debug.Log(hitGrid.collider.name);
+                // Debug.Log(turretPos);
 
                 //Finding object with "deploy" as child
-                if (hitGrid.collider.transform.Find("Deploy"))
+                if (hitGrid.collider.transform.Find("Deploy") && hasDeleted == true)
                 {
                     placementPos = hitGrid.collider.transform.position;
+                    placementRot = hitGrid.collider.transform.rotation;
 
+                    hasDeleted = true;
                     fcm.enabled = false;
 
                     //Selecting another object?
                     if (currentlySelected != hitGrid.collider.gameObject)
                     {
-                        /*
-                        //Setting World Canvas to true
-                        GameObject selectedObject = hitGrid.collider.transform.Find("Deploy").gameObject;
-                        selectedObject.SetActive(true);
-                        */
-
                         deploymentPanel.SetActive(true);
+                        
+                        upgradeSnowballPanel.SetActive(false);
+                        upgradeFishDispencerPanel.SetActive(false);
+                        upgradePistonPanel.SetActive(false);
 
-                        //Deactivate the currently selected object
+                        currentlySelected = hitGrid.collider.gameObject;
+                    }
+                }
+                
+                //Finding object with "Snowball" and deploying Turret
+                if (hitGrid.collider.tag == "Snowball" && hasDeleted == true)
+                {
+                    hasDeleted = false;
+                    fcm.enabled = false;
+
+                    upgradeFishDispencerPanel.SetActive(false);
+
+                    if (currentlySelected != hitGrid.collider.gameObject)
+                    {
+                        turretPos = hitGrid.collider.transform.position;
+                        turretRot = hitGrid.collider.transform.rotation;
+
+                        upgradeSnowballPanel.SetActive(true);
+
                         if (currentlySelected != null)
                         {
-                            deploymentPanel.SetActive(false);
+                            upgradeSnowballPanel.SetActive(false);
                         }
 
-                        currentlySelected = hitGrid.collider.gameObject; 
+                        currentlySelected = hitGrid.collider.gameObject;
+                    }
+                }
+                
+                //Finding object with "Snowball" and deploying Turret
+                if (hitGrid.collider.tag == "PoisonFish" && hasDeleted == true)
+                {
+                    hasDeleted = false;
+                    fcm.enabled = false;
 
+                    upgradeSnowballPanel.SetActive(false);
+
+                    if (currentlySelected != hitGrid.collider.gameObject)
+                    {
+                        turretPos = hitGrid.collider.transform.position;
+                        turretRot = hitGrid.collider.transform.rotation;
+
+                        upgradeFishDispencerPanel.SetActive(true);
+
+                        if (currentlySelected != null)
+                        {
+                            upgradeFishDispencerPanel.SetActive(false);
+                        }
+
+                        currentlySelected = hitGrid.collider.gameObject;
                     }
                 }
             }
         }
 
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
+            hasDeleted = true;
             fcm.enabled = true;
-            upgradePanel.SetActive(false);
+
+            upgradeSnowballPanel.SetActive(false);
+            upgradeFishDispencerPanel.SetActive(false);
+            deploymentPanel.SetActive(false); 
 
             if (currentlySelected != null)
             {
@@ -103,4 +136,5 @@ public class Selecting : MonoBehaviour
             }
         }
     }
+    #endregion
 }

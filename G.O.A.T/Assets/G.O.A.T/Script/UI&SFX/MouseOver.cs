@@ -29,7 +29,7 @@ public class MouseOver : MonoBehaviour {
                 infoText.text = hover.collider.name;
                 infoPanel.SetActive(true);
             }
-            else if (hover.collider.tag == "Snowball")
+            else if (hover.collider.tag == "Snowball" || hover.collider.tag == "PoisonFish")
             {
                 infoText.text = hover.collider.name;
                 infoPanel.SetActive(true);

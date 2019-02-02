@@ -12,10 +12,11 @@ public class CameraPan : MonoBehaviour {
         i = 0;
 	}
 
+    #region Switching Cameras
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(i);
+        //Debug.Log(i);
 
         if (Input.GetKeyDown("d"))
         {
@@ -78,9 +79,8 @@ public class CameraPan : MonoBehaviour {
             i = 3;
             CameraObject[3].SetActive(true);
         }
-       
-
     }
+    #endregion
 }
 
 

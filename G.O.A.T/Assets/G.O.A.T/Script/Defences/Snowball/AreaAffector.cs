@@ -12,33 +12,11 @@ public class AreaAffector : MonoBehaviour
         tsScript.enabled = false;
     }
 
-    private void OnTriggerEnter(Collider enter)
-    {
-        if(enter.gameObject.tag == "Enemies")
-        {
-            //Debug.Log("enter");
-           // tsScript.enabled = true;
-        }
-    }
-
     private void OnTriggerStay(Collider stay)
     {
         if (stay.gameObject.tag == "Enemies")
         {
             tsScript.enabled = true;
         }
-    }
-
-    private void OnTriggerExit(Collider exit)
-    {
-        if (exit.gameObject.tag == "Enemies")
-        {
-            //tsScript.enabled = false;
-        }
-    }
-
-    private void OnCollisionStay(Collision collision)
-    {
-        
     }
 }

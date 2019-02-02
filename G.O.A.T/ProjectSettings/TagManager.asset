@@ -13,6 +13,7 @@ TagManager:
   - Deselect
   - Snowball
   - Defence
+  - PoisonFish
   layers:
   - Default
   - TransparentFX

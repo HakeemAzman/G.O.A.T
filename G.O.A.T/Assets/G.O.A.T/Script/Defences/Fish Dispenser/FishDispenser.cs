@@ -7,6 +7,7 @@ public class FishDispenser : MonoBehaviour
     #region Feesh
     [Header ("Fish Dispenser Setup")]
     public Transform spawnHere;
+    public GameObject spawnHereBox;
     public GameObject prefabBadFish;
     private GameObject badFish;
 
@@ -14,6 +15,7 @@ public class FishDispenser : MonoBehaviour
     public float rateOfSpawn;
 
     private float spawnTimer;
+    private float spawnHereTimer = 10f;
 
     private void Start()
     {
@@ -22,6 +24,13 @@ public class FishDispenser : MonoBehaviour
 
     private void Update()
     {
+        spawnHereTimer -= Time.deltaTime;
+
+        if (spawnHereTimer <= 0)
+        {
+            spawnHereBox.GetComponent<MeshRenderer>().enabled = false;
+        }
+
         if (badFish == null)
         {
             spawnTimer -= Time.deltaTime;

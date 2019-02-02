@@ -7,17 +7,6 @@ public class BtnManager : MonoBehaviour {
 
     public GameObject deploy;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-       	
-	}
-
     public void ready()
     {
         Destroy(deploy);
