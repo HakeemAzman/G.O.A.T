@@ -7,7 +7,8 @@ public class FakeCameraMovement : MonoBehaviour {
     float turningSpeed;
     float movingSpeed;
     float sensitivity = 20;
-
+    float zoomVal = 20;
+    
     [Header("Left and Right Settings")]
     public bool canTurn = true;
 
@@ -19,6 +20,7 @@ public class FakeCameraMovement : MonoBehaviour {
     public float minSize = 30;
     public float maxSize = 60;
 
+    public GameObject audioList;
 	// Use this for initialization
 	void Start ()
     {
@@ -29,11 +31,14 @@ public class FakeCameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+
         if (Input.GetKey(KeyCode.A) && canTurn == true)
             transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
+        audioList.gameObject.transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (Input.GetKey(KeyCode.D) && canTurn == true)
             transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
+        audioList.gameObject.transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (transform.position.y <= ceil)
         {
@@ -51,5 +56,8 @@ public class FakeCameraMovement : MonoBehaviour {
         fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
         fov = Mathf.Clamp(fov, minSize, maxSize);
         Camera.main.orthographicSize = fov;
+
+        audioList.gameObject.transform.Translate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * zoomVal);
+        
     }
 }

@@ -6,7 +6,9 @@ public class OrtographicMovement : MonoBehaviour {
 
     float turningSpeed;
     public float movingSpeed;
+    public float followSpeed;
     float sensitivity = 20;
+    public GameObject audioList;
 
     [Header("Floor and Ceil")]
     public float rotationMin = 0f;
@@ -28,24 +30,28 @@ public class OrtographicMovement : MonoBehaviour {
         {
             fcmScript.canTurn = false;
             transform.Translate(Vector3.left * movingSpeed * Time.deltaTime);
+            audioList.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.D))
         {
             fcmScript.canTurn = false;
             transform.Translate(Vector3.right * movingSpeed * Time.deltaTime);
+            audioList.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.W))
         {
             fcmScript.canTurn = false;
             transform.Translate(Vector3.up * movingSpeed * Time.deltaTime);
+            audioList.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetMouseButton(1) && Input.GetKey(KeyCode.S))
         {
             fcmScript.canTurn = false;
             transform.Translate(Vector3.down * movingSpeed * Time.deltaTime);
+            audioList.transform.position = gameObject.transform.position;
         }
 
         if (Input.GetMouseButtonUp(1))
