@@ -25,7 +25,7 @@ public class FakeCameraMovement : MonoBehaviour {
 	void Start ()
     {
         turningSpeed = 100f;
-        movingSpeed = 10f;
+        movingSpeed = 30f;
 	}
 	
 	// Update is called once per frame

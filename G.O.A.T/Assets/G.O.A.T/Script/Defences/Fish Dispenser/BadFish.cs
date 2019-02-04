@@ -4,22 +4,11 @@ using UnityEngine;
 
 public class BadFish : MonoBehaviour
 {
-    public float destroyTimer;
-    public Poison poiScript;
-
-    public bool hasTouched = false;
-
-    private void Start()
-    {
-        destroyTimer = poiScript.poisonTimer;
-    }
-
     private void OnTriggerEnter(Collider enter)
     {
         if(enter.gameObject.tag == "Enemies")
         {
-            hasTouched = true;
-            Destroy(this.gameObject, destroyTimer);
+            Destroy(this.gameObject);
         }
     }
 }

@@ -76,6 +76,7 @@ public class Selecting : MonoBehaviour
                     fcm.enabled = false;
 
                     upgradeFishDispencerPanel.SetActive(false);
+                    upgradePistonPanel.SetActive(false);
 
                     if (currentlySelected != hitGrid.collider.gameObject)
                     {
@@ -93,13 +94,39 @@ public class Selecting : MonoBehaviour
                     }
                 }
                 
-                //Finding object with "Snowball" and deploying Turret
+                //Finding object with "PoisonFish" and deploying Turret
                 if (hitGrid.collider.tag == "PoisonFish" && hasDeleted == true)
                 {
                     hasDeleted = false;
                     fcm.enabled = false;
 
                     upgradeSnowballPanel.SetActive(false);
+                    upgradePistonPanel.SetActive(false);
+
+                    if (currentlySelected != hitGrid.collider.gameObject)
+                    {
+                        turretPos = hitGrid.collider.transform.position;
+                        turretRot = hitGrid.collider.transform.rotation;
+
+                        upgradeFishDispencerPanel.SetActive(true);
+
+                        if (currentlySelected != null)
+                        {
+                            upgradeFishDispencerPanel.SetActive(false);
+                        }
+
+                        currentlySelected = hitGrid.collider.gameObject;
+                    }
+                }
+
+                //Finding object with "Blast Furnace" and deploying Turret
+                if (hitGrid.collider.tag == "Piston" && hasDeleted == true)
+                {
+                    hasDeleted = false;
+                    fcm.enabled = false;
+
+                    upgradeSnowballPanel.SetActive(false);
+                    upgradeFishDispencerPanel.SetActive(false);
 
                     if (currentlySelected != hitGrid.collider.gameObject)
                     {
@@ -126,6 +153,7 @@ public class Selecting : MonoBehaviour
 
             upgradeSnowballPanel.SetActive(false);
             upgradeFishDispencerPanel.SetActive(false);
+            upgradePistonPanel.SetActive(false);
             deploymentPanel.SetActive(false); 
 
             if (currentlySelected != null)

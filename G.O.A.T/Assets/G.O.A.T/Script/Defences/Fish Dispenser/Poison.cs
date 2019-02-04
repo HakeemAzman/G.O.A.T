@@ -22,15 +22,7 @@ public class Poison : MonoBehaviour
     {
         if(hasTouched == true)
         {
-            agent.speed = 0;
-            poisonTimer -= Time.deltaTime;
-
-            if(poisonTimer <= 0)
-            {
-                agent.speed = 2.5f;
-                poisonTimer = 5f;
-                hasTouched = false;
-            }
+            agent.speed = 0.5f;
         }
     }
 

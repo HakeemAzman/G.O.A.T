@@ -27,18 +27,22 @@ public class EnemyWalrusStats : MonoBehaviour
         ss = FindObjectOfType<SardineStats>();
     }
 
+    private void Update()
+    {
+        if (enemyHealth == 0f)
+        {
+            audio.Play();
+            Destroy(gameObject, 1f);
+            cs.AddBubbles(10);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Bullet")
         {
             enemyHealth -= damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
-            if (enemyHealth == 0f)
-            {
-                audio.Play();
-                Destroy(gameObject, 1f);
-                cs.AddBubbles(10);
-            }
         }
 
         if (other.gameObject.tag == "PlayerTower")
@@ -46,5 +50,16 @@ public class EnemyWalrusStats : MonoBehaviour
             Destroy(gameObject);
             ss.sardineHP -= ss.damageToTake;
         }
+
+        if(other.gameObject.tag == "Piston")
+        {
+            StartCoroutine(PistonDeath());
+        }
+    }
+
+    IEnumerator PistonDeath()
+    {
+        yield return new WaitForSeconds(2f);
+        enemyHealth = 0f;
     }
 }

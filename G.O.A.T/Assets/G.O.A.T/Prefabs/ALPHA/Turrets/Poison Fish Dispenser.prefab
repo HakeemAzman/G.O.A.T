@@ -725,4 +725,4 @@ MonoBehaviour:
   spawnHereBox: {fileID: 1939948733386460}
   prefabBadFish: {fileID: 1694226142774226, guid: 9e423c097f74e724eab0726dd76b9839,
     type: 2}
-  rateOfSpawn: 5
+  rateOfSpawn: 10

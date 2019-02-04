@@ -27,18 +27,22 @@ public class EnemyAIstats : MonoBehaviour
         ss = FindObjectOfType<SardineStats>();
     }
 
+    private void Update()
+    {
+        if (enemyHealth <= 0f)
+        {
+            audio.Play();
+            Destroy(gameObject, 0.5f);
+            cs.AddBubbles(5);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Bullet")
         {
             enemyHealth = enemyHealth - damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
-            if (enemyHealth == 0f)
-            {
-                audio.Play();
-                Destroy(gameObject, 0.5f);
-                cs.AddBubbles(5);
-            }
         }
         
         if(other.gameObject.tag == "PlayerTower")
@@ -46,6 +50,17 @@ public class EnemyAIstats : MonoBehaviour
             Destroy(gameObject);
             ss.sardineHP -= ss.damageToTake;
         }
+
+        if (other.gameObject.tag == "Piston")
+        {
+            StartCoroutine(PistonDeath());
+        }
+    }
+
+    IEnumerator PistonDeath()
+    {
+         yield return new WaitForSeconds(2f);
+         enemyHealth = 0f;
     }
 
 }

@@ -7,6 +7,7 @@ public class Deployment : MonoBehaviour
     [Header("Defences")]
     public GameObject turret;
     public GameObject poisonFish;
+    public GameObject blastFurnace;
 
     [Header("Snowball Upgrade")]
     public GameObject snowballUpgrade;
@@ -47,6 +48,20 @@ public class Deployment : MonoBehaviour
             cs.bubblesCount -= 80;
             GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Poison Fish Dispenser";
+            audio.Play();
+            selectScript.deploymentPanel.SetActive(false);
+            Destroy(selectScript.currentlySelected);
+        }
+    }
+
+    //Depoys a piston using the position of the select grid
+    public void Piston()
+    {
+        if (cs.bubblesCount >= 100)
+        {
+            cs.bubblesCount -= 100;
+            GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.8f, selectScript.placementPos.z), Quaternion.identity);
+            child.name = "Blast Furnace";
             audio.Play();
             selectScript.deploymentPanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
