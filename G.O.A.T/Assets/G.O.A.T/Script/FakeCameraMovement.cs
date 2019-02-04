@@ -29,11 +29,11 @@ public class FakeCameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //if (Input.GetKey(KeyCode.A) && canTurn == true)
-        //    transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
+        if (Input.GetKey(KeyCode.A) && canTurn == true)
+            transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
 
-        //if (Input.GetKey(KeyCode.D) && canTurn == true)
-        //    transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
+        if (Input.GetKey(KeyCode.D) && canTurn == true)
+            transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (transform.position.y <= ceil)
         {

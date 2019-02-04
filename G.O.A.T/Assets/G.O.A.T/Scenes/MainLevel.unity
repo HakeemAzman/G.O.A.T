@@ -2064,7 +2064,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1355950695795106, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4086681374243710, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6469,7 +6469,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 861006845}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53411df135fd8c149836470b94cfa085, type: 3}
   m_Name: 
@@ -7679,7 +7679,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1355950695795106, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4086681374243710, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8220,7 +8220,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1355950695795106, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4086681374243710, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9955,6 +9955,11 @@ Prefab:
     - target: {fileID: 4086681374243710, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
       propertyPath: m_LocalScale.y
       value: 0.05077754
+      objectReference: {fileID: 0}
+    - target: {fileID: 82758111290126496, guid: 67621834fe655d04da54c80aee880c9c,
+        type: 2}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 81099010755445516, guid: 67621834fe655d04da54c80aee880c9c, type: 2}
