@@ -648,7 +648,7 @@ MonoBehaviour:
   range: 4
   bulletPrefab: {fileID: 1822969743383856, guid: d8f7e6e52343584459c21a585bf4b001,
     type: 2}
-  fireRate: 0.5
+  fireRate: 1
   whatToShoot: Enemies
   partToRotate: {fileID: 4443646788875030}
   turnSpeed: 20

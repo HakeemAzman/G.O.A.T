@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 195771508078501150}
   - component: {fileID: 114115142647663234}
   - component: {fileID: 114816821491694306}
+  - component: {fileID: 114905588231109928}
   m_Layer: 0
   m_Name: WalrusAnimated
   m_TagString: Enemies
@@ -278,8 +279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d8cbb7381494142b03708dbb87935e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 12
-  enemyFullhealth: 12
+  enemyHealth: 8
+  enemyFullhealth: 8
   damageTaken: 5
   healthbar: {fileID: 114026208330081534}
 --- !u!114 &114625491986332974
@@ -358,6 +359,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114905588231109928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1577207752553800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29491e622e77c3f48981c9e574ba0602, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poisonTimer: 5
 --- !u!136 &136570846178018046
 CapsuleCollider:
   m_ObjectHideFlags: 1
