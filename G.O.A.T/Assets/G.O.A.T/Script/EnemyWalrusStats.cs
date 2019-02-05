@@ -33,12 +33,11 @@ public class EnemyWalrusStats : MonoBehaviour
 
     private void Update()
     {
-        if (enemyHealth == 0f)
+        if (enemyHealth <= 0f)
         {
             gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
             //hat.SetActive(false);
-            audio.Play();
-            cs.AddBubbles(10);
+
             Destroy(gameObject, 1f);
         }
     }
@@ -52,7 +51,10 @@ public class EnemyWalrusStats : MonoBehaviour
 
             if (enemyHealth <= 0f)
             {
-                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, this.gameObject.transform.position, Quaternion.identity);
+                audio.Play();
+                cs.AddBubbles(50);
+                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+                bubbleParticle.transform.SetParent(gameObject.transform, true);
                 Destroy(bubbleParticle, 1f);
             }
         }

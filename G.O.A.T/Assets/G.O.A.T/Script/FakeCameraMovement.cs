@@ -20,6 +20,11 @@ public class FakeCameraMovement : MonoBehaviour {
     public float minSize = 30;
     public float maxSize = 60;
 
+    [Header ("3D Sound")]
+    public float ceilSound = -12f;
+    public float floorSound = -6f;
+    public GameObject audioListenerScene;
+
     public GameObject audioList;
 	// Use this for initialization
 	void Start ()
@@ -31,6 +36,8 @@ public class FakeCameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        Vector3 zAxis = audioListenerScene.transform.localPosition;
+        audioListenerScene.transform.Translate(zAxis * Input.GetAxis("Mouse ScrollWheel"));
 
         if (Input.GetKey(KeyCode.A) && canTurn == true)
             transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);

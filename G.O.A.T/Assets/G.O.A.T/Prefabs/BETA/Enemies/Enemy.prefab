@@ -417,6 +417,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonTimer: 5
+  poisonEffect: {fileID: 1406601278758640, guid: 9b9a527e78259604682ed3aa5e58304c,
+    type: 2}
 --- !u!114 &114222696684764016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -467,8 +469,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa4a227a49f2364cb839a716628dc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 3
-  enemyFullhealth: 3
+  enemyHealth: 5
+  enemyFullhealth: 5
   damageTaken: 3
   bubbleCurrencyParticle: {fileID: 1313641080188316, guid: 429e0ca68bf9a444495037c67bb6945c,
     type: 2}

@@ -10,6 +10,8 @@ public class Poison : MonoBehaviour
 
     private NavMeshAgent agent;
 
+    public GameObject poisonEffect;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -29,7 +31,9 @@ public class Poison : MonoBehaviour
     private void OnTriggerEnter(Collider enter)
     {
         if(enter.gameObject.tag == "Poison")
-        {   
+        {
+            GameObject child = Instantiate(poisonEffect, transform.position, Quaternion.identity);
+            child.transform.SetParent(gameObject.transform, true);
             hasTouched = true;
         }
     }

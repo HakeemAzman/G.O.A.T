@@ -61,7 +61,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 100)
         {
             cs.bubblesCount -= 100;
-            GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.8f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Blast Furnace";
             audio.Play();
             selectScript.deploymentPanel.SetActive(false);

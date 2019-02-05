@@ -36,10 +36,8 @@ public class EnemyAIstats : MonoBehaviour
         if (enemyHealth <= 0f)
         {
             gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
-            hat.SetActive(false);
-            audio.Play();
+            hat.SetActive(false);;
             Destroy(gameObject, 1f);
-            cs.AddBubbles(5);
         }
     }
 
@@ -52,7 +50,10 @@ public class EnemyAIstats : MonoBehaviour
 
             if(enemyHealth <= 0f)
             {
-                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, this.gameObject.transform.position, Quaternion.identity);
+                audio.Play();
+                cs.AddBubbles(30);
+                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+                bubbleParticle.transform.SetParent(gameObject.transform, true);
                 Destroy(bubbleParticle, 1f);
             }
         }

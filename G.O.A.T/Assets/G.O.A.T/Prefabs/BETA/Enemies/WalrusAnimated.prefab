@@ -373,8 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85d8cbb7381494142b03708dbb87935e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyHealth: 8
-  enemyFullhealth: 8
+  enemyHealth: 10
+  enemyFullhealth: 10
   damageTaken: 5
   healthbar: {fileID: 114026208330081534}
   bubbleCurrencyParticle: {fileID: 1313641080188316, guid: 429e0ca68bf9a444495037c67bb6945c,
@@ -468,6 +468,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poisonTimer: 5
+  poisonEffect: {fileID: 1406601278758640, guid: 9b9a527e78259604682ed3aa5e58304c,
+    type: 2}
 --- !u!136 &136525456297484096
 CapsuleCollider:
   m_ObjectHideFlags: 1
