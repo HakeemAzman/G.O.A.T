@@ -22,7 +22,7 @@ public class Selecting : MonoBehaviour
     public GameObject upgradePistonPanel;
 
     Deployment dScript;
-    bool hasDeleted = true;
+    public bool hasDeleted = true;
 
     private void Start()
     {

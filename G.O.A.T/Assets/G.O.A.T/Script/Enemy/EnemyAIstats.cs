@@ -13,6 +13,10 @@ public class EnemyAIstats : MonoBehaviour
 
     public float damageTaken;
 
+    public GameObject bubbleCurrencyParticle;
+
+    public GameObject hat;
+
     public Image healthbar;
 
     CurrencySystem cs;
@@ -31,8 +35,10 @@ public class EnemyAIstats : MonoBehaviour
     {
         if (enemyHealth <= 0f)
         {
+            gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            hat.SetActive(false);
             audio.Play();
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject, 1f);
             cs.AddBubbles(5);
         }
     }
@@ -43,6 +49,12 @@ public class EnemyAIstats : MonoBehaviour
         {
             enemyHealth = enemyHealth - damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
+
+            if(enemyHealth <= 0f)
+            {
+                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, this.gameObject.transform.position, Quaternion.identity);
+                Destroy(bubbleParticle, 1f);
+            }
         }
         
         if(other.gameObject.tag == "PlayerTower")
@@ -62,5 +74,4 @@ public class EnemyAIstats : MonoBehaviour
          yield return new WaitForSeconds(2f);
          enemyHealth = 0f;
     }
-
 }

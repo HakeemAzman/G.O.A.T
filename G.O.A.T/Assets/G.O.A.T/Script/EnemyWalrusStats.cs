@@ -15,6 +15,10 @@ public class EnemyWalrusStats : MonoBehaviour
 
     public Image healthbar;
 
+    public GameObject bubbleCurrencyParticle;
+
+    public GameObject hat;
+
     SardineStats ss;
 
     CurrencySystem cs;
@@ -31,9 +35,11 @@ public class EnemyWalrusStats : MonoBehaviour
     {
         if (enemyHealth == 0f)
         {
+            gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            //hat.SetActive(false);
             audio.Play();
-            Destroy(gameObject, 1f);
             cs.AddBubbles(10);
+            Destroy(gameObject, 1f);
         }
     }
 
@@ -43,6 +49,12 @@ public class EnemyWalrusStats : MonoBehaviour
         {
             enemyHealth -= damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
+
+            if (enemyHealth <= 0f)
+            {
+                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, this.gameObject.transform.position, Quaternion.identity);
+                Destroy(bubbleParticle, 1f);
+            }
         }
 
         if (other.gameObject.tag == "PlayerTower")

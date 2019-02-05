@@ -377,6 +377,9 @@ MonoBehaviour:
   enemyFullhealth: 8
   damageTaken: 5
   healthbar: {fileID: 114026208330081534}
+  bubbleCurrencyParticle: {fileID: 1313641080188316, guid: 429e0ca68bf9a444495037c67bb6945c,
+    type: 2}
+  hat: {fileID: 0}
 --- !u!114 &114625491986332974
 MonoBehaviour:
   m_ObjectHideFlags: 1

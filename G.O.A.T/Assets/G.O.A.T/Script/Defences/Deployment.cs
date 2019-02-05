@@ -8,6 +8,7 @@ public class Deployment : MonoBehaviour
     public GameObject turret;
     public GameObject poisonFish;
     public GameObject blastFurnace;
+    public GameObject buildingBlock;
 
     [Header("Snowball Upgrade")]
     public GameObject snowballUpgrade;
@@ -82,16 +83,42 @@ public class Deployment : MonoBehaviour
         }
     }
 
+    public void RemoveSnowball()
+    {
+        selectScript.hasDeleted = true;
+
+        cs.bubblesCount += 50;
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1.8f, selectScript.turretPos.z), Quaternion.identity);
+        block.name = "Build here!";
+        Destroy(selectScript.currentlySelected);
+        selectScript.upgradeSnowballPanel.SetActive(false);
+    }
+
+    public void RemoveFishDispenser()
+    {
+        selectScript.hasDeleted = true;
+
+        cs.bubblesCount += 80;
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
+        block.name = "Build here!";
+        Destroy(selectScript.currentlySelected);
+        selectScript.upgradeFishDispencerPanel.SetActive(false);
+    }
+
+    public void RemovePiston()
+    {
+        selectScript.hasDeleted = true;
+
+        cs.bubblesCount += 100;
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
+        block.name = "Build here!";
+        Destroy(selectScript.currentlySelected);
+        selectScript.upgradePistonPanel.SetActive(false);
+    }
+    
     public void Rotation()
     {
         selectScript.currentlySelected.transform.Rotate(0, 90, 0);
-    }
-
-    public void RemoveDefences()
-    {
-        cs.bubblesCount += 20;
-        Destroy(selectScript.currentlySelected);
-        selectScript.upgradeSnowballPanel.SetActive(false);
     }
     #endregion
 

@@ -114,9 +114,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1198376587967338}
-  m_LocalRotation: {x: 0, y: 0.6427876, z: 0, w: 0.7660445}
-  m_LocalPosition: {x: -21.428646, y: 2.561, z: -3.0865133}
-  m_LocalScale: {x: 0.85839456, y: 0.8583928, z: 0.8583944}
+  m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.538655, y: 6.17, z: -9.510868}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224923068046456174}
   - {fileID: 4810712892556676}
@@ -130,8 +130,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876955425737858}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.018, y: 0.567, z: -0.063}
-  m_LocalScale: {x: 0.43140483, y: 0.43140483, z: 0.43140483}
+  m_LocalPosition: {x: -0.018000433, y: 0.5669999, z: -0.06300026}
+  m_LocalScale: {x: 0.431405, y: 0.43140474, z: 0.431405}
   m_Children: []
   m_Father: {fileID: 4312666033316580}
   m_RootOrder: 1
@@ -470,6 +470,9 @@ MonoBehaviour:
   enemyHealth: 3
   enemyFullhealth: 3
   damageTaken: 3
+  bubbleCurrencyParticle: {fileID: 1313641080188316, guid: 429e0ca68bf9a444495037c67bb6945c,
+    type: 2}
+  hat: {fileID: 1876955425737858}
   healthbar: {fileID: 114762673726143930}
 --- !u!114 &114762673726143930
 MonoBehaviour:
