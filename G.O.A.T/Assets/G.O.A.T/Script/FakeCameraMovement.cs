@@ -37,7 +37,11 @@ public class FakeCameraMovement : MonoBehaviour {
 	void Update ()
     {
         Vector3 zAxis = audioListenerScene.transform.localPosition;
-        audioListenerScene.transform.Translate(zAxis * Input.GetAxis("Mouse ScrollWheel"));
+
+        if(audioListenerScene.transform.localPosition.z <= floorSound)
+        {
+            audioListenerScene.transform.Translate(zAxis * Input.GetAxis("Mouse ScrollWheel"));
+        }
 
         if (Input.GetKey(KeyCode.A) && canTurn == true)
             transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
