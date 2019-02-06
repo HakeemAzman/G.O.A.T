@@ -13,6 +13,10 @@ public class EnemyAIstats : MonoBehaviour
 
     public float damageTaken;
 
+    public GameObject bubbleCurrencyParticle;
+
+    public GameObject hat;
+
     public Image healthbar;
 
     CurrencySystem cs;
@@ -27,17 +31,30 @@ public class EnemyAIstats : MonoBehaviour
         ss = FindObjectOfType<SardineStats>();
     }
 
+    private void Update()
+    {
+        if (enemyHealth <= 0f)
+        {
+            gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            hat.SetActive(false);;
+            Destroy(gameObject, 1f);
+        }
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Bullet")
         {
             enemyHealth = enemyHealth - damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
-            if (enemyHealth == 0f)
+
+            if(enemyHealth <= 0f)
             {
                 audio.Play();
-                Destroy(gameObject, 0.5f);
-                cs.AddBubbles(5);
+                cs.AddBubbles(30);
+                GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+                bubbleParticle.transform.SetParent(gameObject.transform, true);
+                Destroy(bubbleParticle, 1f);
             }
         }
         
@@ -46,6 +63,23 @@ public class EnemyAIstats : MonoBehaviour
             Destroy(gameObject);
             ss.sardineHP -= ss.damageToTake;
         }
+
+        if (other.gameObject.tag == "Piston")
+        {
+            StartCoroutine(PistonDeath());
+        }
     }
 
+    IEnumerator PistonDeath()
+    {
+        audio.Play();
+        cs.AddBubbles(30);
+        GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+        bubbleParticle.transform.SetParent(gameObject.transform, true);
+        Destroy(bubbleParticle, 1f);
+
+        yield return new WaitForSeconds(2f);
+
+        enemyHealth = 0f;
+    }
 }

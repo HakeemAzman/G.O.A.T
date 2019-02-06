@@ -7,7 +7,8 @@ public class FakeCameraMovement : MonoBehaviour {
     float turningSpeed;
     float movingSpeed;
     float sensitivity = 20;
-
+    float zoomVal = 20;
+    
     [Header("Left and Right Settings")]
     public bool canTurn = true;
 
@@ -19,21 +20,50 @@ public class FakeCameraMovement : MonoBehaviour {
     public float minSize = 30;
     public float maxSize = 60;
 
+    [Header ("3D Sound")]
+    public float ceilSound = -12f;
+    public float floorSound = -6f;
+    public GameObject audioListenerScene;
+
+    public GameObject audioList;
+
+    bool canZoomIn = false;
 	// Use this for initialization
 	void Start ()
     {
         turningSpeed = 100f;
-        movingSpeed = 10f;
+        movingSpeed = 30f;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        Vector3 zAxis = audioListenerScene.transform.localPosition;
+
+        Debug.Log(audioListenerScene.transform.localPosition);
+
+        if(zAxis.z > -12f && zAxis.z < -6f)
+        {
+            audioListenerScene.transform.Translate(audioListenerScene.transform.localPosition * Input.GetAxis("Mouse ScrollWheel"));
+        }
+
+        if (audioListenerScene.transform.localPosition.z < -12f)
+        {
+            audioListenerScene.transform.localPosition = new Vector3(0, 0, -11.5f);
+        }
+
+        if (audioListenerScene.transform.localPosition.z > -6f)
+        {
+            audioListenerScene.transform.localPosition = new Vector3(0, 0, -6.5f);
+        }
+
         if (Input.GetKey(KeyCode.A) && canTurn == true)
             transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
+        audioList.gameObject.transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (Input.GetKey(KeyCode.D) && canTurn == true)
             transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
+        audioList.gameObject.transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (transform.position.y <= ceil)
         {
@@ -51,5 +81,8 @@ public class FakeCameraMovement : MonoBehaviour {
         fov += Input.GetAxis("Mouse ScrollWheel") * sensitivity;
         fov = Mathf.Clamp(fov, minSize, maxSize);
         Camera.main.orthographicSize = fov;
+
+        //audioList.gameObject.transform.Translate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * zoomVal);
+        
     }
 }

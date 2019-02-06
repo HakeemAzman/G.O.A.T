@@ -13,6 +13,9 @@ TagManager:
   - Deselect
   - Snowball
   - Defence
+  - PoisonFish
+  - PlayerAI
+  - Piston
   layers:
   - Default
   - TransparentFX
