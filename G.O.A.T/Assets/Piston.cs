@@ -36,9 +36,9 @@ public class Piston : MonoBehaviour
     {
         if(other.gameObject.tag == "Enemies")
         {
-            other.GetComponent<Rigidbody>().AddForce(transform.right * pushForce, ForceMode.Acceleration);
-            other.GetComponent<NavMeshAgent>().enabled = false;
             other.GetComponent<Rigidbody>().isKinematic = false;
+            other.GetComponent<NavMeshAgent>().enabled = false;
+            other.GetComponent<Rigidbody>().AddForce(transform.right * pushForce, ForceMode.Acceleration);
         }
     }
 

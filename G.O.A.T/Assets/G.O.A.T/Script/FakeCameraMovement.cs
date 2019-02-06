@@ -26,6 +26,8 @@ public class FakeCameraMovement : MonoBehaviour {
     public GameObject audioListenerScene;
 
     public GameObject audioList;
+
+    bool canZoomIn = false;
 	// Use this for initialization
 	void Start ()
     {
@@ -38,9 +40,21 @@ public class FakeCameraMovement : MonoBehaviour {
     {
         Vector3 zAxis = audioListenerScene.transform.localPosition;
 
-        if(audioListenerScene.transform.localPosition.z <= floorSound)
+        Debug.Log(audioListenerScene.transform.localPosition);
+
+        if(zAxis.z > -12f && zAxis.z < -6f)
         {
-            audioListenerScene.transform.Translate(zAxis * Input.GetAxis("Mouse ScrollWheel"));
+            audioListenerScene.transform.Translate(audioListenerScene.transform.localPosition * Input.GetAxis("Mouse ScrollWheel"));
+        }
+
+        if (audioListenerScene.transform.localPosition.z < -12f)
+        {
+            audioListenerScene.transform.localPosition = new Vector3(0, 0, -11.5f);
+        }
+
+        if (audioListenerScene.transform.localPosition.z > -6f)
+        {
+            audioListenerScene.transform.localPosition = new Vector3(0, 0, -6.5f);
         }
 
         if (Input.GetKey(KeyCode.A) && canTurn == true)
@@ -68,7 +82,7 @@ public class FakeCameraMovement : MonoBehaviour {
         fov = Mathf.Clamp(fov, minSize, maxSize);
         Camera.main.orthographicSize = fov;
 
-        audioList.gameObject.transform.Translate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * zoomVal);
+        //audioList.gameObject.transform.Translate(Vector3.back * Input.GetAxis("Mouse ScrollWheel") * zoomVal);
         
     }
 }
