@@ -73,7 +73,14 @@ public class EnemyWalrusStats : MonoBehaviour
 
     IEnumerator PistonDeath()
     {
+        audio.Play();
+        cs.AddBubbles(30);
+        GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+        bubbleParticle.transform.SetParent(gameObject.transform, true);
+        Destroy(bubbleParticle, 1f);
+
         yield return new WaitForSeconds(2f);
+
         enemyHealth = 0f;
     }
 }

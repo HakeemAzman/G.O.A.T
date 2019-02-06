@@ -65,7 +65,7 @@ public class endnemyStats : MonoBehaviour
         if (other.gameObject.tag == "PlayerTower")
         {
             Destroy(gameObject);
-            ss.sardineHP -= ss.damageToTake;
+            ss.sardineHP -= ss.endEnemyDamage;
         }
 
         if (other.gameObject.tag == "Piston")

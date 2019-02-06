@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 96066767179431576}
   - component: {fileID: 95400124827129940}
   - component: {fileID: 137545033984100704}
-  - component: {fileID: 136545182613577006}
+  - component: {fileID: 64973986158880858}
   m_Layer: 0
   m_Name: Fox
   m_TagString: Enemies
@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601066902322330}
   m_LocalRotation: {x: 0, y: 0.6427876, z: 0, w: 0.7660445}
-  m_LocalPosition: {x: -20.644247, y: 2.2981608, z: -3.8156462}
+  m_LocalPosition: {x: -12.89633, y: 6.56, z: -23.10152}
   m_LocalScale: {x: 0.85839456, y: 0.8583928, z: 0.8583944}
   m_Children:
   - {fileID: 224362104197412718}
@@ -196,10 +196,24 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64973986158880858
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1601066902322330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: dc607032cec346545a67295800a398cc, type: 3}
 --- !u!82 &82658967553464254
 AudioSource:
   m_ObjectHideFlags: 1
@@ -564,19 +578,6 @@ CapsuleCollider:
   m_Height: 3.41
   m_Direction: 1
   m_Center: {x: -0.0036288481, y: -0.00040528178, z: -0.22841136}
---- !u!136 &136545182613577006
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1601066902322330}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.6747807
-  m_Height: 1.3495644
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.7787046, z: 0}
 --- !u!137 &137545033984100704
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -642,19 +643,19 @@ NavMeshAgent:
   m_GameObject: {fileID: 1601066902322330}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.29
+  m_Radius: 0.22
   m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 500
+  m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 0
+  m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.659227
   m_BaseOffset: 0.3296135
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 0
+  m_ObstacleAvoidanceType: 3
 --- !u!222 &222300911366757268
 CanvasRenderer:
   m_ObjectHideFlags: 1

@@ -72,7 +72,14 @@ public class EnemyAIstats : MonoBehaviour
 
     IEnumerator PistonDeath()
     {
-         yield return new WaitForSeconds(2f);
-         enemyHealth = 0f;
+        audio.Play();
+        cs.AddBubbles(30);
+        GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
+        bubbleParticle.transform.SetParent(gameObject.transform, true);
+        Destroy(bubbleParticle, 1f);
+
+        yield return new WaitForSeconds(2f);
+
+        enemyHealth = 0f;
     }
 }

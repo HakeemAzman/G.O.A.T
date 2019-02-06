@@ -17,7 +17,8 @@ public class SardineColor : MonoBehaviour {
     public Color originalColorRed = Color.red;
         
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
         ss = FindObjectOfType<SardineStats>();       
     }
 	
@@ -28,21 +29,20 @@ public class SardineColor : MonoBehaviour {
 
         if (ss.sardineHP <= 0)
         {
-            Debug.Log("game over");
             SceneManager.LoadScene("GameOver Screen");
         }
 
-        else if (ss.sardineHP <= 5)    // Red
+        else if (ss.sardineHP <= 2)    // Red
         {
             rend.material.color = Color.Lerp(rend.material.color, originalColorRed, Time.deltaTime);                      
         }
 
-        else if (ss.sardineHP <= 10)    // Orange
+        else if (ss.sardineHP <= 5)    // Orange
         {
             rend.material.color = Color.Lerp(rend.material.color, originalColorOrange, Time.deltaTime);            
         }
 
-        else if (ss.sardineHP <= 20)    // Green
+        else if (ss.sardineHP <= 10)    // Green
         {
             rend.material.color = originalColorGreen;
         }    

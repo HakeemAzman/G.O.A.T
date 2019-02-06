@@ -38,6 +38,7 @@ public class Piston : MonoBehaviour
         {
             other.GetComponent<Rigidbody>().AddForce(transform.right * pushForce, ForceMode.Acceleration);
             other.GetComponent<NavMeshAgent>().enabled = false;
+            other.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
@@ -48,7 +49,7 @@ public class Piston : MonoBehaviour
         StartCoroutine(timetoWait());
     }
 
-   IEnumerator timetoWait()
+    IEnumerator timetoWait()
     {
         yield return new WaitForSeconds(1);
         boxColl.gameObject.GetComponent<BoxCollider>().enabled = false;

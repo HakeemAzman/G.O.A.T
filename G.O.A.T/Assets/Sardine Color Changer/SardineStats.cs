@@ -9,6 +9,7 @@ public class SardineStats : MonoBehaviour {
 
     [SerializeField] public int sardineHP;
     public int damageToTake = 1;
+    public int endEnemyDamage = 5;
     
     public Text sardineHealthText;
 
@@ -24,46 +25,30 @@ public class SardineStats : MonoBehaviour {
     {
        // rend.material.color = originalColorGreen;      
         sc = FindObjectOfType<SardineColor>();
-
-        //sardineHP = 20;
+       
         sardineHealthText.text = ": " + sardineHP;                
     }
 
     void Update()
     {
-       //  Debug.Log(sardineHP);
-
         sardineHealthText.text = ": " + sardineHP;
 
          if (sardineHP <= 0)        
          {
-            sardineAlmostEmpty.SetActive(false);
             sardineEmpty.SetActive(true);
-             Debug.Log("game over");
+            sardineMedium.SetActive(false);
              SceneManager.LoadScene("GameOver Screen");           
          }
 
          else if (sardineHP <= 5)    // Red
          {
-            sardineMedium.SetActive(false);
-            sardineAlmostEmpty.SetActive(true);
-            // rend.material.color = Color.Lerp(rend.material.color, sc.originalColorRed, Time.deltaTime);
-            // renderer.material.color = originalColorRed;            
-         }
+            sardineFull.SetActive(false);
+            sardineMedium.SetActive(true);
+        }
 
          else if (sardineHP <= 10)    // Orange
          {
-            sardineFull.SetActive(false);
-            sardineMedium.SetActive(true);
-
-             //rend.material.color = Color.Lerp(rend.material.color, sc.originalColorOrange, Time.deltaTime);
-             //renderer.material.color = originalColorOrange;
-         }
-
-         else if (sardineHP <= 20)    // Green
-         {
-            // rend.material.color = sc.originalColorGreen;
-             // Debug.Log("hello");
+            sardineFull.SetActive(true);
          }
     }
 }
