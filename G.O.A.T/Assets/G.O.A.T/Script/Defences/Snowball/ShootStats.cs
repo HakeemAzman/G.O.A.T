@@ -7,7 +7,7 @@ public class ShootStats : MonoBehaviour {
     public float shootSpeed;
     public Rigidbody rb;
     TurretShooting tsScript;
-
+    public GameObject onHit;
     private Transform target;
 
     public float speed = 30f;
@@ -57,6 +57,8 @@ public class ShootStats : MonoBehaviour {
     {
         if(other.gameObject.tag == "Enemies")
         {
+            GameObject onHitParticle = Instantiate(onHit, transform.position, Quaternion.identity);
+            onHit.transform.SetParent(gameObject.transform, true);
             Destroy(gameObject);
         }
     }
