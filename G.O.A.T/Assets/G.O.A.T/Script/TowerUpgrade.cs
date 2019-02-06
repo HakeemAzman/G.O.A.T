@@ -11,10 +11,13 @@ public class TowerUpgrade : MonoBehaviour
     public bool isUpgradable2;
     public bool isUpgradable3;
     public bool isUpgradable4;
+    public bool isNewSpawner;
     public GameObject upgrade;
     public GameObject upgrade2;
     public GameObject upgrade3;
     public GameObject upgrade4;
+    public GameObject newSpawner;
+    public GameObject oldSpawner;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +27,15 @@ public class TowerUpgrade : MonoBehaviour
         isUpgradable2 = false;
         isUpgradable3 = false;
         isUpgradable4 = false;
+        isNewSpawner = false;
+    }
+
+    private void Update()
+    {
+        if(isNewSpawner)
+        {
+            newSpawner.SetActive(true);
+        }
     }
 
     public void Upgrade1()
@@ -77,6 +89,8 @@ public class TowerUpgrade : MonoBehaviour
             cs.bubblesCount -= 550;
             anim.SetBool("canUpgrade4", true);
             StartCoroutine(DisableUpgrade4());
+            isNewSpawner = true;
+            oldSpawner.SetActive(false);
         }
     }
 
