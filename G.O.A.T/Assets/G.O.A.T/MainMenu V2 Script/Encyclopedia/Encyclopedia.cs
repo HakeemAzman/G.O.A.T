@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class Encyclopedia : MonoBehaviour {
 
     public GameObject blinkingText;
+    EncyclopediaSmoothFade fade;
 
 	// Use this for initialization
 	void Start () {
         //StartCoroutine("StopBlinking");
+        fade = FindObjectOfType<EncyclopediaSmoothFade>();
 	}
 	
 	// Update is called once per frame
@@ -19,18 +21,8 @@ public class Encyclopedia : MonoBehaviour {
 
     public void BackToGame()
     {
+        StartCoroutine(fade.FadeOut());
         SceneManager.LoadScene("MainLevel");
     }
-
-    /*
-    IEnumerator StopBlinking()
-    {
-        blinkingText.SetActive(true);
-
-        yield return new WaitForSeconds(5f);
-
-        blinkingText.SetActive(false);
-        Debug.Log("Blinking Text off");
-    }
-    */
+    
 }
