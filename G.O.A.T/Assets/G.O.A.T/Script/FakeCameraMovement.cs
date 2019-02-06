@@ -40,16 +40,14 @@ public class FakeCameraMovement : MonoBehaviour {
     {
         Vector3 zAxis = audioListenerScene.transform.localPosition;
 
-        Debug.Log(audioListenerScene.transform.localPosition);
-
-        if(zAxis.z > -12f && zAxis.z < -6f)
+        if(zAxis.z > -15f && zAxis.z < -6f)
         {
             audioListenerScene.transform.Translate(audioListenerScene.transform.localPosition * Input.GetAxis("Mouse ScrollWheel"));
         }
 
-        if (audioListenerScene.transform.localPosition.z < -12f)
+        if (audioListenerScene.transform.localPosition.z < -15f)
         {
-            audioListenerScene.transform.localPosition = new Vector3(0, 0, -11.5f);
+            audioListenerScene.transform.localPosition = new Vector3(0, 0, -14.5f);
         }
 
         if (audioListenerScene.transform.localPosition.z > -6f)
