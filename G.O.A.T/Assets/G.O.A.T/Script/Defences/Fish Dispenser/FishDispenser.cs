@@ -10,7 +10,7 @@ public class FishDispenser : MonoBehaviour
     public GameObject spawnHereBox;
     public GameObject prefabBadFish;
     private GameObject badFish;
-
+    public AudioSource audio;
     [Header ("Fish Dispenser Settings")]
     public float rateOfSpawn;
 
@@ -37,8 +37,10 @@ public class FishDispenser : MonoBehaviour
 
             if (spawnTimer <= 0)
             {
+                
                 spawnTimer = rateOfSpawn;
                 badFish = Instantiate(prefabBadFish, spawnHere.position, spawnHere.rotation);
+                audio.Play();
             }
         }
     }

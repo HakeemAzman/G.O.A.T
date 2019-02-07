@@ -13,7 +13,7 @@ public class Piston : MonoBehaviour
     public BoxCollider boxColl;
     public GameObject gustVFX;
     private float spawnHereTimer = 10f;
-
+    public AudioSource audio;
     // Use this for initialization
     void Start ()
     {
@@ -57,6 +57,7 @@ public class Piston : MonoBehaviour
         gustVFX.SetActive(false);
         pistonGo.SetActive(false);
         yield return new WaitForSeconds(pushUpgrade);
+        audio.Play();
         gustVFX.SetActive(true);
         pistonGo.SetActive(true);
         timeDelay();

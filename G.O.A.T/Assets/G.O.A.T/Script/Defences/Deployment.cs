@@ -38,6 +38,8 @@ public class Deployment : MonoBehaviour
 
     CurrencySystem cs;
     AudioSource audio;
+    [Header("SellSound")]
+    public AudioSource sellAudio;
     Selecting selectScript;
 
     // Use this for initialization
@@ -75,6 +77,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 80)
         {
             cs.bubblesCount -= 80;
+            Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Poison Fish Dispenser";
             Instantiate(buildvfx, transform.position, Quaternion.identity);
@@ -90,6 +93,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 100)
         {
             cs.bubblesCount -= 100;
+            Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
             child.name = "Blast Furnace";
             audio.Play();
@@ -103,6 +107,7 @@ public class Deployment : MonoBehaviour
         selectScript.hasDeleted = true;
 
         cs.bubblesCount += 50;
+        sellAudio.Play();
         GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1.8f, selectScript.turretPos.z), Quaternion.identity);
         block.name = "Build here!";
         Destroy(selectScript.currentlySelected);
@@ -112,7 +117,7 @@ public class Deployment : MonoBehaviour
     public void RemoveFishDispenser()
     {
         selectScript.hasDeleted = true;
-
+        sellAudio.Play();
         cs.bubblesCount += 80;
         GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
         block.name = "Build here!";
@@ -123,7 +128,7 @@ public class Deployment : MonoBehaviour
     public void RemovePiston()
     {
         selectScript.hasDeleted = true;
-
+        sellAudio.Play();
         cs.bubblesCount += 100;
         GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
         block.name = "Build here!";
@@ -145,7 +150,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 120)
         {
             cs.bubblesCount -= 120;
-            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
             child.name = "Snowball Turret - Level 2";
             audio.Play();
@@ -160,7 +165,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 150)
         {
             cs.bubblesCount -= 150;
-            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(fishDispenserUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
             child.name = "Poison Fish Dispenser - Level 2";
             audio.Play();
@@ -175,7 +180,7 @@ public class Deployment : MonoBehaviour
         if (cs.bubblesCount >= 170)
         {
             cs.bubblesCount -= 170;
-            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(blastFurnaceUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
             child.name = "Blast Furnace - Level 2";
             audio.Play();
