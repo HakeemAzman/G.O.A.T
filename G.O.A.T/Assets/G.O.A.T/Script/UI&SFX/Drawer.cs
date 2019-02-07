@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Drawer : MonoBehaviour {
 
     Animator drawerAnim;
-    bool canOpen = false;
+    public bool canOpen = false;
 
 	// Use this for initialization
 	void Start ()

@@ -7,11 +7,13 @@ public class BtnManager : MonoBehaviour {
     public AudioSource audio;
     public GameObject deploy;
     public GameObject tutorialtext;
+    public bool isReady = false;
     public void ready()
     {
         Destroy(deploy);
         audio.Play();
         spawner.SetActive(true);
+        isReady = true;
     }
 
     public void fastForward()

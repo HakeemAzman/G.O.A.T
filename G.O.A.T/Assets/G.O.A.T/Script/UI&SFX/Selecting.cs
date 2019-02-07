@@ -23,7 +23,7 @@ public class Selecting : MonoBehaviour
 
     Deployment dScript;
     public bool hasDeleted = true;
-
+    public bool hasHit = false;
     private void Start()
     {
         deploymentPanel.SetActive(false);
@@ -44,12 +44,14 @@ public class Selecting : MonoBehaviour
 
             if (hit)
             {
+                
                 // Debug.Log(hitGrid.collider.name);
                 // Debug.Log(turretPos);
 
                 //Finding object with "deploy" as child
                 if (hitGrid.collider.transform.Find("Deploy") && hasDeleted == true)
                 {
+                    hasHit = true;
                     placementPos = hitGrid.collider.transform.position;
                     placementRot = hitGrid.collider.transform.rotation;
 

@@ -41,7 +41,7 @@ public class Deployment : MonoBehaviour
     [Header("SellSound")]
     public AudioSource sellAudio;
     Selecting selectScript;
-
+    public bool hasDeploy = false;
     // Use this for initialization
     void Start ()
     {
@@ -61,6 +61,7 @@ public class Deployment : MonoBehaviour
     {
         if(cs.bubblesCount >= 50)
         {
+            hasDeploy = true;
             cs.bubblesCount -= 50;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
