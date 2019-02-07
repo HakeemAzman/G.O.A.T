@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/G.O.A.T/Main Scenes/MainMenu.unity
     guid: 0d444cb3aeb24cc40943fe36176104a5
   - enabled: 1
+    path: Assets/G.O.A.T/Main Scenes/TutorialLevel.unity
+    guid: 988004d1f08ee0f4399af46fb5b1fc03
+  - enabled: 1
     path: Assets/G.O.A.T/Main Scenes/MainLevel.unity
     guid: 07a5337e21a769d43b8293d312b409e8
   - enabled: 1
