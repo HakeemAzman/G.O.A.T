@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class TutorialManager : MonoBehaviour {
     bool aIsPressed = false;
     bool dIsPressed = false;
@@ -112,6 +113,8 @@ public class TutorialManager : MonoBehaviour {
         {
             tutorialBox.SetActive(false);
         }
+
+        
         
     }
 

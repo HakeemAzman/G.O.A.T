@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class BtnManager : MonoBehaviour {
     public GameObject spawner;
     public AudioSource audio;
@@ -10,6 +10,13 @@ public class BtnManager : MonoBehaviour {
     
     public bool isReady = false;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
     public void ready()
     {
         deploy.SetActive(false);
