@@ -12,20 +12,46 @@ public class Deployment : MonoBehaviour
 
     [Header("Snowball Upgrade")]
     public GameObject snowballUpgrade;
+    public GameObject fishDispenserUpgrade;
+    public GameObject blastFurnaceUpgrade;
     public GameObject PistonGO;
     public GameObject buildvfx;
+
+    [Header("Description Boxes")]
+    public GameObject snowPanel;
+    public GameObject fishPanel;
+    public GameObject blastPanel;
+
+    [Header("Snow Upgrade Boxes")]
+    public GameObject snowUpgrade;
+    public GameObject snowSell;
+
+    [Header("Fish Upgrade Boxes")]
+    public GameObject fishTurn;
+    public GameObject fishUpgrade;
+    public GameObject fishSell;
+
+    [Header("Blast Furnace Boxes")]
+    public GameObject blastfTurn;
+    public GameObject blastfUpgrade;
+    public GameObject blastfSell;
+
+    CurrencySystem cs;
     AudioSource audio;
     Selecting selectScript;
 
-    CurrencySystem cs;
-
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         cs = FindObjectOfType<CurrencySystem>();
         audio = GetComponent<AudioSource>();
         selectScript = FindObjectOfType<Selecting>();
 	}
+
+    public void CameraAndPanel()
+    {
+        selectScript.fcm.enabled = true;
+    }
 
     #region All Deployments/Remove
     //Deploys a defence using the position of the select grid.
@@ -72,21 +98,6 @@ public class Deployment : MonoBehaviour
         }
     }
 
-    //Deploys an upgraded snowball
-    public void SnowballUpgrade()
-    {
-        if (cs.bubblesCount >= 120)
-        {
-            cs.bubblesCount -= 120;
-            Instantiate(buildvfx, transform.position, Quaternion.identity);
-            GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
-            child.name = "Snowball Turret - Level 2";
-            audio.Play();
-            selectScript.upgradeSnowballPanel.SetActive(false);
-            Destroy(selectScript.currentlySelected);
-        }
-    }
-
     public void RemoveSnowball()
     {
         selectScript.hasDeleted = true;
@@ -127,8 +138,164 @@ public class Deployment : MonoBehaviour
     }
     #endregion
 
-    public void CameraAndPanel()
+    #region All Upgrades
+    //Deploys an upgraded snowball
+    public void SnowballUpgrade()
     {
-        selectScript.fcm.enabled = true;
+        if (cs.bubblesCount >= 120)
+        {
+            cs.bubblesCount -= 120;
+            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            GameObject child = Instantiate(snowballUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
+            child.name = "Snowball Turret - Level 2";
+            audio.Play();
+            selectScript.upgradeSnowballPanel.SetActive(false);
+            Destroy(selectScript.currentlySelected);
+        }
     }
+
+    //Deploys an upgraded snowball
+    public void PoisonFishUpgrade()
+    {
+        if (cs.bubblesCount >= 150)
+        {
+            cs.bubblesCount -= 150;
+            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            GameObject child = Instantiate(fishDispenserUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
+            child.name = "Poison Fish Dispenser - Level 2";
+            audio.Play();
+            selectScript.upgradeFishDispencerPanel.SetActive(false);
+            Destroy(selectScript.currentlySelected);
+        }
+    }
+
+    //Deploys an upgraded snowball
+    public void PistonUpgrade()
+    {
+        if (cs.bubblesCount >= 170)
+        {
+            cs.bubblesCount -= 170;
+            Instantiate(buildvfx, transform.position, Quaternion.identity);
+            GameObject child = Instantiate(blastFurnaceUpgrade, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y, selectScript.turretPos.z), Quaternion.identity);
+            child.name = "Blast Furnace - Level 2";
+            audio.Play();
+            selectScript.upgradePistonPanel.SetActive(false);
+            Destroy(selectScript.currentlySelected);
+        }
+    }
+    #endregion
+
+    #region Description Panel
+    public void SnowBallCost()
+    {
+        snowPanel.SetActive(true);
+    }
+
+    public void SnowBallCostExit()
+    {
+        snowPanel.SetActive(false);
+    }
+
+    public void FishCost()
+    {
+        fishPanel.SetActive(true);
+    }
+
+    public void FishCostExit()
+    {
+        fishPanel.SetActive(false);
+    }
+
+    public void BlastCost()
+    {
+        blastPanel.SetActive(true);
+    }
+
+    public void BlastCostExit()
+    {
+        blastPanel.SetActive(false);
+    }
+    #endregion
+
+    #region Upgrade Panel
+    public void SnowballUpgradePanel()
+    {
+        snowUpgrade.SetActive(true);
+    }
+
+    public void SnowballUpgradeExit()
+    {
+        snowUpgrade.SetActive(false);
+    }
+
+    public void SnowSell()
+    {
+        snowSell.SetActive(true);
+    }
+
+    public void SnowSellExit()
+    {
+        snowSell.SetActive(false);
+    }
+
+    public void fishDispenseTurn()
+    {
+        fishTurn.SetActive(true);
+    }
+
+    public void fishDispenseTurnExit()
+    {
+        fishTurn.SetActive(false);
+    }
+
+    public void fishDispenseUpgrade()
+    {
+        fishUpgrade.SetActive(true);
+    }
+
+    public void fishDispenseUpgradeExit()
+    {
+        fishUpgrade.SetActive(false);
+    }
+
+    public void fishDispenseSell()
+    {
+        fishSell.SetActive(true);
+    }
+
+    public void fishDispenseSellExit()
+    {
+        fishSell.SetActive(false);
+    }
+
+    public void bfTurn()
+    {
+        blastfTurn.SetActive(true);
+    }
+
+    public void bfExit()
+    {
+        blastfTurn.SetActive(false);
+    }
+
+    public void bfUpgrade()
+    {
+        blastfUpgrade.SetActive(true);
+    }
+
+    public void bfUpgradeExit()
+    {
+        blastfUpgrade.SetActive(false);
+    }
+
+    public void bfSell()
+    {
+        blastfSell.SetActive(true);
+    }
+
+    public void bfSellExit()
+    {
+        blastfSell.SetActive(false);
+    }
+    #endregion
 }
