@@ -11,12 +11,13 @@ public class Piston : MonoBehaviour
     public GameObject spawnHereBox;
     public GameObject pistonGo;
     public BoxCollider boxColl;
-
+    public GameObject gustVFX;
     private float spawnHereTimer = 10f;
 
     // Use this for initialization
     void Start ()
     {
+        gustVFX.SetActive(false);
         //timeDelay();
         boxColl = GetComponent<BoxCollider>();
         StartCoroutine(timetoWait());
@@ -53,8 +54,10 @@ public class Piston : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         boxColl.gameObject.GetComponent<BoxCollider>().enabled = false;
+        gustVFX.SetActive(false);
         pistonGo.SetActive(false);
         yield return new WaitForSeconds(pushUpgrade);
+        gustVFX.SetActive(true);
         pistonGo.SetActive(true);
         timeDelay();
     }
