@@ -52,12 +52,15 @@ public class BlinkingText : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-       // StopBlinking();
+        StartCoroutine("StopBlinking");
     }
 
-    void StopBlinking ()
+    IEnumerator StopBlinking ()
     {
+        yield return new WaitForSeconds(5f);
+
         isBlinking = false;
         blinkingText.SetActive(false);
+        //Debug.Log("Blinking Stopped");
     }        
 }

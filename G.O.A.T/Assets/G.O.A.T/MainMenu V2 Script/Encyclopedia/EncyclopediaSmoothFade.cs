@@ -6,33 +6,25 @@ using UnityEngine.SceneManagement;
 
 public class EncyclopediaSmoothFade : MonoBehaviour {
 
-    public Image imageToFade;
-    public GameObject switchOffImage;
+    public Image imageToFadeIn;
+    public Image imageToFadeOut;
+    public GameObject fadeInImage;
+    public GameObject fadeOutImage;
 
-
+    public bool imageToFadeCompleted;
 
     void Start()
-    {
-        // SceneManager.sceneLoaded += OnSceneLoaded;
+    {       
         Fade();
+
+        imageToFadeCompleted = false;
     }
-    /*
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        StartCoroutine(Fade());
-    }
-    */
-    /*
-    void Update()
-    {
-        Fade();
-    }
-    */
+
      void Fade()
-    {        
-        switchOffImage.SetActive(true);
-        imageToFade.color = Color.black;
-        imageToFade.CrossFadeAlpha(0, 3f, false);
+    {
+        fadeInImage.SetActive(true);
+        imageToFadeIn.color = Color.black;
+        imageToFadeIn.CrossFadeAlpha(0, 3f, false);
         StartCoroutine(OffFade());
     }
     
@@ -40,14 +32,16 @@ public class EncyclopediaSmoothFade : MonoBehaviour {
     {
         yield return new WaitForSeconds(3f);
 
-        switchOffImage.SetActive(false);
+        fadeInImage.SetActive(false);
     }
     
-    public IEnumerator FadeOut()
+     public IEnumerator FadeOut()
     {
-        switchOffImage.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        imageToFade.CrossFadeAlpha(1, 3f, false);
+        fadeOutImage.SetActive(true);
+        imageToFadeOut.CrossFadeAlpha(1, 3f, false);
+        yield return new WaitForSeconds(3f);
+
+        imageToFadeCompleted = true;
     }
 
 }

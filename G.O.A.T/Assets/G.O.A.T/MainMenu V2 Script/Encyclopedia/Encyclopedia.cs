@@ -5,23 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class Encyclopedia : MonoBehaviour {
 
-    public GameObject blinkingText;
+    //public GameObject blinkingText;
     EncyclopediaSmoothFade fade;
 
+    private float wt;
+
 	// Use this for initialization
-	void Start () {
-        //StartCoroutine("StopBlinking");
+	void Start () {        
         fade = FindObjectOfType<EncyclopediaSmoothFade>();
+                
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        Debug.Log(fade.imageToFadeCompleted);
 	}
-
+     
     public void BackToGame()
     {
+        /*
         StartCoroutine(fade.FadeOut());
+
+        if (fade.imageToFadeCompleted == true)
+        {
+            SceneManager.LoadScene("MainMenu");            
+        }
+        */
         SceneManager.LoadScene("MainLevel");
     }
     
