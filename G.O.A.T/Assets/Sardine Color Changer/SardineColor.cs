@@ -8,7 +8,7 @@ public class SardineColor : MonoBehaviour {
     // ATTACH TO SARDINE PREFABS
 
     SardineStats ss;
-
+    public GameObject gameOver;
     public MeshRenderer rend;
 
     // Colours  
@@ -29,7 +29,8 @@ public class SardineColor : MonoBehaviour {
 
         if (ss.sardineHP <= 0)
         {
-            SceneManager.LoadScene("GameOver Screen");
+            gameOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
 
         else if (ss.sardineHP <= 2)    // Red
