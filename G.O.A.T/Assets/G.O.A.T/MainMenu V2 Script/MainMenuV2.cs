@@ -27,7 +27,11 @@ public class MainMenuV2 : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Quit");
+    }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("TutorialLevel");
     }
 
     public void SetFullScreen(bool isFullscreen)

@@ -3638,7 +3638,7 @@ Prefab:
         type: 2}
       propertyPath: snowballUpgrade
       value: 
-      objectReference: {fileID: 1071040135226842, guid: eaf51964d0e519c478c4f3c7aad82f4b,
+      objectReference: {fileID: 1071040135226842, guid: 704d04780e4bfbf488b502a05846e302,
         type: 2}
     - target: {fileID: 114347531056635666, guid: 3744df1f764d76346b3fe164e9927346,
         type: 2}
@@ -3729,12 +3729,19 @@ Prefab:
         type: 2}
       propertyPath: fishDispenserUpgrade
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483437770503786, guid: 73fca3c952734f547b52c305450701f5,
+        type: 2}
     - target: {fileID: 114347531056635666, guid: 3744df1f764d76346b3fe164e9927346,
         type: 2}
       propertyPath: sellAudio
       value: 
       objectReference: {fileID: 361941755}
+    - target: {fileID: 114347531056635666, guid: 3744df1f764d76346b3fe164e9927346,
+        type: 2}
+      propertyPath: blastFurnaceUpgrade
+      value: 
+      objectReference: {fileID: 1495219984785060, guid: 654cc6412e322f8418cbd7f46d555d8b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3744df1f764d76346b3fe164e9927346, type: 2}
   m_IsPrefabAsset: 0
@@ -28660,8 +28667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 2}
-  m_SizeDelta: {x: 292.8, y: 49.4}
+  m_AnchoredPosition: {x: 5.3, y: 1.8208}
+  m_SizeDelta: {x: 566.9, y: 49.4}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &852581102
 MonoBehaviour:
@@ -55866,7 +55873,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1091697440}
-        m_MethodName: SnowballUpgrade
+        m_MethodName: PistonUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -74488,7 +74495,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1091697440}
-        m_MethodName: SnowballUpgrade
+        m_MethodName: PoisonFishUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

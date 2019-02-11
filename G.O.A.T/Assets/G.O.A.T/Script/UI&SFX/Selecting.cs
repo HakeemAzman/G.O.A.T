@@ -135,11 +135,11 @@ public class Selecting : MonoBehaviour
                         turretPos = hitGrid.collider.transform.position;
                         turretRot = hitGrid.collider.transform.rotation;
 
-                        upgradeFishDispencerPanel.SetActive(true);
+                        upgradePistonPanel.SetActive(true);
 
                         if (currentlySelected != null)
                         {
-                            upgradeFishDispencerPanel.SetActive(false);
+                            upgradePistonPanel.SetActive(false);
                         }
 
                         currentlySelected = hitGrid.collider.gameObject;

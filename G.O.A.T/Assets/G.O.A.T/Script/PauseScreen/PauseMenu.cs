@@ -50,4 +50,10 @@ public class PauseMenu : MonoBehaviour {
         SceneManager.LoadScene("Encyclopedia");
     }
 
+    public void ToMainLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainLevel");
+    }
+
 }
