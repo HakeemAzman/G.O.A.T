@@ -39,7 +39,9 @@ public class endnemyStats : MonoBehaviour
         {
             gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
             hat.SetActive(false); ;
-            Destroy(gameObject, 1f);
+            winScreen.gameObject.SetActive(true);
+            //Time.timeScale = 0;
+            //Destroy(gameObject, 1f);
         }
     }
 
@@ -56,15 +58,13 @@ public class endnemyStats : MonoBehaviour
                 cs.AddBubbles(30);
                 GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
                 bubbleParticle.transform.SetParent(gameObject.transform, true);
-                winScreen.gameObject.SetActive(true);
-                Time.timeScale = 0;
                 Destroy(bubbleParticle, 1f);
             }
         }
 
         if (other.gameObject.tag == "PlayerTower")
         {
-            Destroy(gameObject);
+            //Destroy(gameObject);
             ss.sardineHP -= ss.endEnemyDamage;
         }
 
