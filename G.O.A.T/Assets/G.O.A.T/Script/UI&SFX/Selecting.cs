@@ -24,6 +24,9 @@ public class Selecting : MonoBehaviour
     Deployment dScript;
     public bool hasDeleted = true;
     public bool hasHit = false;
+
+    public bool hitButton;
+
     private void Start()
     {
         deploymentPanel.SetActive(false);
@@ -41,16 +44,15 @@ public class Selecting : MonoBehaviour
         {
             RaycastHit hitGrid = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitGrid, Mathf.Infinity);
-
+            
             if (hit)
-            {
-                
-                // Debug.Log(hitGrid.collider.name);
+            {               
+                 Debug.Log(hitGrid.collider.name);
                 // Debug.Log(turretPos);
-
-                //Finding object with "deploy" as child
-                if (hitGrid.collider.transform.Find("Deploy") && hasDeleted == true)
-                {
+             
+                    //Finding object with "deploy" as child
+                    if (hitGrid.collider.transform.Find("Deploy"))
+                    {
                     hasHit = true;
                     placementPos = hitGrid.collider.transform.position;
                     placementRot = hitGrid.collider.transform.rotation;
@@ -59,8 +61,8 @@ public class Selecting : MonoBehaviour
                     fcm.enabled = false;
 
                     //Selecting another object?
-                    if (currentlySelected != hitGrid.collider.gameObject)
-                    {
+                      if (currentlySelected != hitGrid.collider.gameObject)
+                      {
                         deploymentPanel.SetActive(true);
                         
                         upgradeSnowballPanel.SetActive(false);
@@ -68,13 +70,13 @@ public class Selecting : MonoBehaviour
                         upgradePistonPanel.SetActive(false);
 
                         currentlySelected = hitGrid.collider.gameObject;
+                      }
                     }
-                }
                 
                 //Finding object with "Snowball" and deploying Turret
-                if (hitGrid.collider.tag == "Snowball" && hasDeleted == true)
+                if (hitGrid.collider.tag == "Snowball")
                 {
-                    hasDeleted = false;
+                    hasDeleted = true;
                     fcm.enabled = false;
 
                     upgradeFishDispencerPanel.SetActive(false);
@@ -97,9 +99,9 @@ public class Selecting : MonoBehaviour
                 }
                 
                 //Finding object with "PoisonFish" and deploying Turret
-                if (hitGrid.collider.tag == "PoisonFish" && hasDeleted == true)
+                if (hitGrid.collider.tag == "PoisonFish")
                 {
-                    hasDeleted = false;
+                    hasDeleted = true;
                     fcm.enabled = false;
 
                     upgradeSnowballPanel.SetActive(false);
@@ -122,9 +124,9 @@ public class Selecting : MonoBehaviour
                 }
 
                 //Finding object with "Blast Furnace" and deploying Turret
-                if (hitGrid.collider.tag == "Piston" && hasDeleted == true)
+                if (hitGrid.collider.tag == "Piston")
                 {
-                    hasDeleted = false;
+                    hasDeleted = true;
                     fcm.enabled = false;
 
                     upgradeSnowballPanel.SetActive(false);
@@ -145,24 +147,25 @@ public class Selecting : MonoBehaviour
                         currentlySelected = hitGrid.collider.gameObject;
                     }
                 }
-            }
-        }
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            hasDeleted = true;
-            fcm.enabled = true;
+                if (hitButton) return;
+             
+                if (hitGrid.collider.tag == "Deselect")
+                {
+                    fcm.enabled = true;
 
-            upgradeSnowballPanel.SetActive(false);
-            upgradeFishDispencerPanel.SetActive(false);
-            upgradePistonPanel.SetActive(false);
-            deploymentPanel.SetActive(false); 
+                    upgradeSnowballPanel.SetActive(false);
+                    upgradeFishDispencerPanel.SetActive(false);
+                    upgradePistonPanel.SetActive(false);
+                    deploymentPanel.SetActive(false);
 
-            if (currentlySelected != null)
-            {
-                deploymentPanel.SetActive(false);
+                    if (currentlySelected != null)
+                    {
+                        deploymentPanel.SetActive(false);
 
-                currentlySelected = null;
+                        currentlySelected = null;
+                    }
+                }
             }
         }
     }

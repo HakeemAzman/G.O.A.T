@@ -2505,6 +2505,11 @@ Prefab:
       propertyPath: m_Name
       value: Snow (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
   m_IsPrefabAsset: 0
@@ -3998,7 +4003,7 @@ GameObject:
   - component: {fileID: 120996361}
   - component: {fileID: 120996363}
   - component: {fileID: 120996362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20564,6 +20569,11 @@ Prefab:
       propertyPath: m_Name
       value: Snow (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
   m_IsPrefabAsset: 0
@@ -26146,7 +26156,7 @@ GameObject:
   - component: {fileID: 776288971}
   - component: {fileID: 776288973}
   - component: {fileID: 776288972}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30547,6 +30557,7 @@ GameObject:
   - component: {fileID: 894570617}
   - component: {fileID: 894570616}
   - component: {fileID: 894570615}
+  - component: {fileID: 894570618}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -30617,7 +30628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -30632,15 +30643,26 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &894570618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 894570613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d08e5beadc9954d815a195df989975, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &900160163
 GameObject:
   m_ObjectHideFlags: 0
@@ -49935,6 +49957,11 @@ Prefab:
       propertyPath: m_Name
       value: Snow (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
   m_IsPrefabAsset: 0
@@ -52467,13 +52494,13 @@ GameObject:
   - component: {fileID: 1561464133}
   - component: {fileID: 1561464132}
   - component: {fileID: 1561464131}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Deselect
   m_TagString: Deselect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1561464130
 Transform:
   m_ObjectHideFlags: 0
@@ -52482,7 +52509,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1561464129}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -5.3, z: -12.7}
+  m_LocalPosition: {x: -3.1, y: -2.9, z: -12.7}
   m_LocalScale: {x: 297.51987, y: 2.1604593, z: 255.90543}
   m_Children: []
   m_Father: {fileID: 800309986}
@@ -56087,7 +56114,7 @@ GameObject:
   - component: {fileID: 1657870286}
   - component: {fileID: 1657870288}
   - component: {fileID: 1657870287}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Snow Description Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57442,7 +57469,7 @@ GameObject:
   - component: {fileID: 1684760421}
   - component: {fileID: 1684760420}
   - component: {fileID: 1684760423}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Snowball Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59755,6 +59782,11 @@ Prefab:
     - target: {fileID: 1524468714855536, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
       propertyPath: m_Name
       value: Snow (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
@@ -67258,6 +67290,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.15688305
       objectReference: {fileID: 0}
+    - target: {fileID: 1420396487190170, guid: 2c53aa1dbf7ae054a83a726bd8063f95, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1996703587729262, guid: 2c53aa1dbf7ae054a83a726bd8063f95, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1025601577710704, guid: 2c53aa1dbf7ae054a83a726bd8063f95, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c53aa1dbf7ae054a83a726bd8063f95, type: 2}
   m_IsPrefabAsset: 0
@@ -68143,6 +68187,11 @@ Prefab:
       propertyPath: m_Name
       value: Snow (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
   m_IsPrefabAsset: 0
@@ -68809,7 +68858,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2014513410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -70547,6 +70596,11 @@ Prefab:
     - target: {fileID: 1524468714855536, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
       propertyPath: m_Name
       value: Snow (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 198921109823681680, guid: ddbdf828910d22c48ad65cb00d96430c,
+        type: 2}
+      propertyPath: prewarm
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddbdf828910d22c48ad65cb00d96430c, type: 2}
