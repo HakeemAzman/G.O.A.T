@@ -47,8 +47,8 @@ public class Selecting : MonoBehaviour
             
             if (hit)
             {               
-                 Debug.Log(hitGrid.collider.name);
-                // Debug.Log(turretPos);
+                 //Debug.Log(hitGrid.collider.name);
+                    Debug.Log(placementRot);
              
                     //Finding object with "deploy" as child
                     if (hitGrid.collider.transform.Find("Deploy"))

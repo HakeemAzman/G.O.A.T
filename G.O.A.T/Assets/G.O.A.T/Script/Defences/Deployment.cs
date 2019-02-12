@@ -45,7 +45,7 @@ public class Deployment : MonoBehaviour
     Selecting selectScript;
     public bool hasDeploy = false;
     #endregion
-
+    
     // Use this for initialization
     void Start ()
     {
@@ -68,7 +68,7 @@ public class Deployment : MonoBehaviour
             hasDeploy = true;
             cs.bubblesCount -= 50;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
-            GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(turret, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), selectScript.placementRot);
             child.name = "Snowball Turret";
             audio.Play();
             selectScript.hitButton = false;
@@ -84,7 +84,7 @@ public class Deployment : MonoBehaviour
         {
             cs.bubblesCount -= 80;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
-            GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), selectScript.placementRot);
             child.name = "Poison Fish Dispenser";
             Instantiate(buildvfx, transform.position, Quaternion.identity);
             audio.Play();
@@ -101,7 +101,7 @@ public class Deployment : MonoBehaviour
         {
             cs.bubblesCount -= 100;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
-            GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), Quaternion.identity);
+            GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), selectScript.placementRot);
             child.name = "Blast Furnace";
             audio.Play();
             selectScript.hitButton = false;
@@ -114,7 +114,7 @@ public class Deployment : MonoBehaviour
     {
         cs.bubblesCount += 50;
         sellAudio.Play();
-        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1.8f, selectScript.turretPos.z), Quaternion.identity);
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1.8f, selectScript.turretPos.z), selectScript.turretRot);
         block.name = "Build here!";
         selectScript.hitButton = false;
         Destroy(selectScript.currentlySelected);
@@ -125,7 +125,7 @@ public class Deployment : MonoBehaviour
     {
         sellAudio.Play();
         cs.bubblesCount += 80;
-        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), selectScript.turretRot);
         block.name = "Build here!";
         selectScript.hitButton = false;
         Destroy(selectScript.currentlySelected);
@@ -136,7 +136,7 @@ public class Deployment : MonoBehaviour
     {
         sellAudio.Play();
         cs.bubblesCount += 100;
-        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), Quaternion.identity);
+        GameObject block = Instantiate(buildingBlock, new Vector3(selectScript.turretPos.x, selectScript.turretPos.y - 1f, selectScript.turretPos.z), selectScript.turretRot);
         block.name = "Build here!";
         selectScript.hitButton = false;
         Destroy(selectScript.currentlySelected);

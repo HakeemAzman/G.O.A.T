@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerUpgrade : MonoBehaviour
 {
-
     CurrencySystem cs;
     public Animator anim;
     public bool isUpgradable;
@@ -18,6 +18,8 @@ public class TowerUpgrade : MonoBehaviour
     public GameObject upgrade4;
     public GameObject newSpawner;
     public GameObject oldSpawner;
+    public Text upgradeText;
+
     // Use this for initialization
     void Start()
     {
@@ -28,10 +30,18 @@ public class TowerUpgrade : MonoBehaviour
         isUpgradable3 = false;
         isUpgradable4 = false;
         isNewSpawner = false;
+        upgradeText.text = "100";
     }
 
     private void Update()
     {
+        if (isUpgradable2)
+            upgradeText.text = "250";
+        if (isUpgradable3)
+            upgradeText.text = "400";
+        if (isUpgradable4)
+            upgradeText.text = "550";
+
         if(isNewSpawner)
         {
             newSpawner.SetActive(true);
