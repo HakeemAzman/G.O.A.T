@@ -55,13 +55,13 @@ public class FakeCameraMovement : MonoBehaviour {
             audioListenerScene.transform.localPosition = new Vector3(0, 0, -6.5f);
         }
 
-        if (Input.GetKey(KeyCode.A) && canTurn == true)
-            transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
-        audioList.gameObject.transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
+        //if (Input.GetKey(KeyCode.A) && canTurn == true)
+        //    transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
+        //audioList.gameObject.transform.Rotate(0, turningSpeed * Time.deltaTime, 0, Space.World);
 
-        if (Input.GetKey(KeyCode.D) && canTurn == true)
-            transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
-        audioList.gameObject.transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
+        //if (Input.GetKey(KeyCode.D) && canTurn == true)
+        //    transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
+        //audioList.gameObject.transform.Rotate(0, -turningSpeed * Time.deltaTime, 0, Space.World);
 
         if (transform.position.y <= ceil)
         {

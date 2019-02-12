@@ -25,6 +25,8 @@ public class endnemyStats : MonoBehaviour
 
     SardineStats ss;
 
+    public bool isdead = false;
+
     private void Start()
     {
         audio = gameObject.GetComponent<AudioSource>();
@@ -37,8 +39,9 @@ public class endnemyStats : MonoBehaviour
     {
         if (enemyHealth <= 0f)
         {
+            isdead = true;
             gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
-            hat.SetActive(false); ;
+            hat.SetActive(false);
             winScreen.gameObject.SetActive(true);
             //Time.timeScale = 0;
             //Destroy(gameObject, 1f);
@@ -54,8 +57,8 @@ public class endnemyStats : MonoBehaviour
 
             if (enemyHealth <= 0f)
             {
+                isdead = true;
                 audio.Play();
-                cs.AddBubbles(30);
                 GameObject bubbleParticle = Instantiate(bubbleCurrencyParticle, transform.position, Quaternion.identity);
                 bubbleParticle.transform.SetParent(gameObject.transform, true);
                 Destroy(bubbleParticle, 1f);

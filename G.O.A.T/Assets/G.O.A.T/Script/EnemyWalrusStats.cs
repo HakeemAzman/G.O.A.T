@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.AI;
 public class EnemyWalrusStats : MonoBehaviour
 {
     AudioSource audio;
@@ -37,7 +37,9 @@ public class EnemyWalrusStats : MonoBehaviour
         {
             gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
             //hat.SetActive(false);
-
+            gameObject.GetComponent<Animator>().enabled = false;
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<SkinnedMeshRenderer>().material.color = new Color(0, 0, 0, 0);
             Destroy(gameObject, 1f);
         }
     }

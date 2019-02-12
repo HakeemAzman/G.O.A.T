@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.AI;
 public class EnemyAIstats : MonoBehaviour
 {
     AudioSource audio;
@@ -35,8 +35,11 @@ public class EnemyAIstats : MonoBehaviour
     {
         if (enemyHealth <= 0f)
         {
-            gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
-            hat.SetActive(false);;
+            //gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            gameObject.GetComponent<Animator>().enabled = false;
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+            gameObject.GetComponent<SkinnedMeshRenderer>().material.color = new Color(0, 0, 0, 0);
+            hat.SetActive(false);
             Destroy(gameObject, 1f);
         }
     }

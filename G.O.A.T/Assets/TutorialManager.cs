@@ -19,9 +19,12 @@ public class TutorialManager : MonoBehaviour {
     public Deployment dpScript;
     public BtnManager btnScript;
     public TutorialUpgrade tscript;
+    public endnemyStats eScript;
     public Animator blinkingDrawer;
     public Animator blinkingDeploy;
     public Animator blinkingReady;
+
+    public Text[] instructions;
     // Use this for initialization
     void Start () {
 		
@@ -43,6 +46,7 @@ public class TutorialManager : MonoBehaviour {
         {
             tutorialBox.SetActive(false);
             tutorial1 = false;
+            instructions[0].GetComponent<Text>().color = new Color(0, 0, 0, 150);
         }
 
         if (!tutorial1)
@@ -73,6 +77,7 @@ public class TutorialManager : MonoBehaviour {
         if (dpScript.hasDeploy == true)
         {
             blinkingDeploy.SetBool("isDeploy", false);
+            instructions[1].GetComponent<Text>().color = new Color(0, 0, 0, 150);
             tutorialText.text = ("You have now deployed a snowball turret! Now you can fend off those pesky penguins from your fishes!");
             tutorialBox.SetActive(true);
             StartCoroutine(timeDelay());
@@ -93,6 +98,7 @@ public class TutorialManager : MonoBehaviour {
         }
         if(btnScript.isReady == true)
         {
+            instructions[2].GetComponent<Text>().color = new Color(0, 0, 0, 150);
             tutorial4 = false;
             
         }
@@ -104,6 +110,7 @@ public class TutorialManager : MonoBehaviour {
         }
         if(!upgradebool)
         {
+
             tutorialText.text = ("Click on Upgrade in the scroll to raise the tower! Once you rise up high enough, a Boss will spawn and once you kill it, you win!");
             tutorialBox.SetActive(true);
            
@@ -111,9 +118,14 @@ public class TutorialManager : MonoBehaviour {
         
         if(tscript.isUpgraded == true)
         {
+            instructions[3].GetComponent<Text>().color = new Color(0, 0, 0, 150);
             tutorialBox.SetActive(false);
         }
 
+        if(eScript.isdead == true)
+        {
+            instructions[4].GetComponent<Text>().color = new Color(0, 0, 0, 150);
+        }
         
         
     }
