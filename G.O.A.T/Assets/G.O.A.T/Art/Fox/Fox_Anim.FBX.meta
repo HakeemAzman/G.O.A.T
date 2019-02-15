@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 9cad11bfda6b6b143a71e418e8827a27
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: fox_geo
+    100004: PantherHead
+    100006: PantherLBLeg1
+    100008: PantherLBLeg2
+    100010: PantherLBLegPalm
+    100012: PantherLFLeg1
+    100014: PantherLFLeg2
+    100016: PantherLFLegDigit02
+    100018: PantherLFLegPalm
+    100020: PantherLLegDigit01
+    100022: PantherLLegDigit01 1
+    100024: PantherLLegDigit02
+    100026: PantherLLegRShoulderblade
+    100028: PantherNeck1
+    100030: PantherNeck2
+    100032: PantherPelvis
+    100034: PantherRBLeg1
+    100036: PantherRBLeg2
+    100038: PantherRBLegPalm
+    100040: PantherRFLeg1
+    100042: PantherRFLeg2
+    100044: PantherRFLegDigit02
+    100046: PantherRFLegPalm
+    100048: PantherRibcage
+    100050: PantherRLegDigit01
+    100052: PantherRLegDigit01 1
+    100054: PantherRLegDigit02
+    100056: PantherRLegRShoulderblade
+    100058: PantherSpine1
+    100060: PantherSpine2
+    100062: PantherSpine3
+    100064: PantherTail1
+    100066: PantherTail2
+    100068: PantherTail3
+    100070: PantherTail4
+    100072: PantherTail5
+    400000: //RootNode
+    400002: fox_geo
+    400004: PantherHead
+    400006: PantherLBLeg1
+    400008: PantherLBLeg2
+    400010: PantherLBLegPalm
+    400012: PantherLFLeg1
+    400014: PantherLFLeg2
+    400016: PantherLFLegDigit02
+    400018: PantherLFLegPalm
+    400020: PantherLLegDigit01
+    400022: PantherLLegDigit01 1
+    400024: PantherLLegDigit02
+    400026: PantherLLegRShoulderblade
+    400028: PantherNeck1
+    400030: PantherNeck2
+    400032: PantherPelvis
+    400034: PantherRBLeg1
+    400036: PantherRBLeg2
+    400038: PantherRBLegPalm
+    400040: PantherRFLeg1
+    400042: PantherRFLeg2
+    400044: PantherRFLegDigit02
+    400046: PantherRFLegPalm
+    400048: PantherRibcage
+    400050: PantherRLegDigit01
+    400052: PantherRLegDigit01 1
+    400054: PantherRLegDigit02
+    400056: PantherRLegRShoulderblade
+    400058: PantherSpine1
+    400060: PantherSpine2
+    400062: PantherSpine3
+    400064: PantherTail1
+    400066: PantherTail2
+    400068: PantherTail3
+    400070: PantherTail4
+    400072: PantherTail5
+    2100000: 'Material #0'
+    4300000: fox_geo
+    7400000: FoxAnimation
+    9500000: //RootNode
+    13700000: fox_geo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: FoxAnimation
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

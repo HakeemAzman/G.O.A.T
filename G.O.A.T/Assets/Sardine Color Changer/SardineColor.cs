@@ -9,12 +9,7 @@ public class SardineColor : MonoBehaviour {
 
     SardineStats ss;
     public GameObject gameOver;
-    public MeshRenderer rend;
-
-    // Colours  
-    public Color originalColorGreen = Color.green;
-    public Color originalColorOrange = new Color(1f, 0.65f, 0f);
-    public Color originalColorRed = Color.red;
+    public GameObject[] fishes;
         
     // Use this for initialization
     void Start ()
@@ -27,33 +22,55 @@ public class SardineColor : MonoBehaviour {
 
         //Debug.Log(ss.sardineHP);
 
+        if (ss.sardineHP == 9)
+        {
+            fishes[0].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 8)
+        {
+            fishes[1].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 7)
+        {
+            fishes[2].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 6)
+        {
+            fishes[3].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 5)
+        {
+            fishes[4].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 4)
+        {
+            fishes[5].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 3)
+        {
+            fishes[6].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 2)
+        {
+            fishes[7].gameObject.SetActive(false);
+        }
+
+        if (ss.sardineHP == 1)
+        {
+            fishes[8].gameObject.SetActive(false);
+        }
+
         if (ss.sardineHP <= 0)
         {
             gameOver.gameObject.SetActive(true);
-            Time.timeScale = 0;
         }
-
-        else if (ss.sardineHP <= 2)    // Red
-        {
-            rend.material.color = Color.Lerp(rend.material.color, originalColorRed, Time.deltaTime);                      
-        }
-
-        else if (ss.sardineHP <= 5)    // Orange
-        {
-            rend.material.color = Color.Lerp(rend.material.color, originalColorOrange, Time.deltaTime);            
-        }
-
-        else if (ss.sardineHP <= 10)    // Green
-        {
-            rend.material.color = originalColorGreen;
-        }    
     }
-    /*
-    void OnTriggerEnter(Collider other)
-    {    
-        if (other.gameObject.tag == "Enemies")
-        { 
-            ss.sardineHP -= ss.damageToTake;         
-        }
-    }*/
+ 
 }
