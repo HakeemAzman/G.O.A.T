@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.AI;
-public class EnemyAIstats : MonoBehaviour
+
+public class FoxEnemyAiStats : MonoBehaviour
 {
     AudioSource audio;
 
@@ -23,6 +24,8 @@ public class EnemyAIstats : MonoBehaviour
 
     SardineStats ss;
 
+    public GameObject skinmeshrenderer;
+
     private void Start()
     {
         audio = gameObject.GetComponent<AudioSource>();
@@ -35,10 +38,10 @@ public class EnemyAIstats : MonoBehaviour
     {
         if (enemyHealth <= 0f)
         {
-            gameObject.GetComponent<SkinnedMeshRenderer>().enabled = false;
+            skinmeshrenderer.GetComponent<SkinnedMeshRenderer>().enabled = false;
             gameObject.GetComponent<Animator>().enabled = false;
             gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            gameObject.GetComponent<SkinnedMeshRenderer>().material.color = new Color(0, 0, 0, 0);
+            skinmeshrenderer.GetComponent<SkinnedMeshRenderer>().material.color = new Color(0, 0, 0, 0);
             hat.SetActive(false);
             Destroy(gameObject, 1f);
         }
@@ -46,12 +49,12 @@ public class EnemyAIstats : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Bullet")
+        if (other.gameObject.tag == "Bullet")
         {
             enemyHealth = enemyHealth - damageTaken;
             healthbar.fillAmount = enemyHealth / enemyFullhealth;
 
-            if(enemyHealth <= 0f)
+            if (enemyHealth <= 0f)
             {
                 audio.Play();
                 cs.AddBubbles(30);
@@ -60,8 +63,8 @@ public class EnemyAIstats : MonoBehaviour
                 Destroy(bubbleParticle, 1f);
             }
         }
-        
-        if(other.gameObject.tag == "PlayerTower")
+
+        if (other.gameObject.tag == "PlayerTower")
         {
             Destroy(gameObject);
             ss.sardineHP -= ss.damageToTake;
