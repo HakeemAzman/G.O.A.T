@@ -2441,12 +2441,19 @@ Prefab:
         type: 2}
       propertyPath: fishDispenserUpgrade
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1483437770503786, guid: 73fca3c952734f547b52c305450701f5,
+        type: 2}
     - target: {fileID: 114347531056635666, guid: 3744df1f764d76346b3fe164e9927346,
         type: 2}
       propertyPath: sellAudio
       value: 
       objectReference: {fileID: 361941755}
+    - target: {fileID: 114347531056635666, guid: 3744df1f764d76346b3fe164e9927346,
+        type: 2}
+      propertyPath: blastFurnaceUpgrade
+      value: 
+      objectReference: {fileID: 1495219984785060, guid: f498d5fd8526d394a8444d006831d750,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3744df1f764d76346b3fe164e9927346, type: 2}
   m_IsPrefabAsset: 0
