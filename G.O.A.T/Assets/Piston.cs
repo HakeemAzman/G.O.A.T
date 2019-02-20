@@ -9,8 +9,10 @@ public class Piston : MonoBehaviour
     public float pushForce;
     public float pushUpgrade;
     public GameObject spawnHereBox;
+    public GameObject spawnHereBox2;
     public BoxCollider boxColl;
     public GameObject gustVFX;
+    public GameObject gustVFX2;
     private float spawnHereTimer = 10f;
     public AudioSource audio;
     // Use this for initialization
@@ -29,6 +31,7 @@ public class Piston : MonoBehaviour
         if (spawnHereTimer <= 0)
         {
             spawnHereBox.GetComponent<MeshRenderer>().enabled = false;
+            spawnHereBox2.GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
@@ -54,11 +57,13 @@ public class Piston : MonoBehaviour
 
         boxColl.gameObject.GetComponent<BoxCollider>().enabled = false;
         gustVFX.SetActive(false);
+        gustVFX2.SetActive(false);
 
         yield return new WaitForSeconds(pushUpgrade);
 
         audio.Play();
         gustVFX.SetActive(true);
+        gustVFX2.SetActive(true);
         timeDelay();
     }
 }
