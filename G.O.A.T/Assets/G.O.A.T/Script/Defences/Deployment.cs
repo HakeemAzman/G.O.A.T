@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Deployment : MonoBehaviour
 {
+    [Header ("All Upgrade Buttons")]
+    public GameObject snowUpgradeButton;
+    public GameObject fishUpgradeButton;
+    public GameObject blastUpgradeButton;
+
     #region Declaration
     [Header("Defences")]
     public GameObject turret;
@@ -44,6 +50,8 @@ public class Deployment : MonoBehaviour
     public AudioSource sellAudio;
     Selecting selectScript;
     public bool hasDeploy = false;
+
+    public static Deployment deployScript;
     #endregion
     
     // Use this for initialization
@@ -52,6 +60,7 @@ public class Deployment : MonoBehaviour
         cs = FindObjectOfType<CurrencySystem>();
         audio = GetComponent<AudioSource>();
         selectScript = FindObjectOfType<Selecting>();
+        deployScript = GetComponent<Deployment>();
 	}
 
     public void CameraAndPanel()
@@ -65,6 +74,7 @@ public class Deployment : MonoBehaviour
     {
         if(cs.bubblesCount >= 50)
         {
+            Deployment.deployScript.snowUpgradeButton.GetComponent<Button>().interactable = true;
             hasDeploy = true;
             cs.bubblesCount -= 50;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
@@ -72,6 +82,7 @@ public class Deployment : MonoBehaviour
             child.name = "Snowball Turret";
             audio.Play();
             selectScript.hitButton = false;
+            snowUpgrade.SetActive(true);
             selectScript.deploymentPanel.SetActive(false);
             Destroy(selectScript.currentlySelected);
         }
@@ -82,6 +93,7 @@ public class Deployment : MonoBehaviour
     {
         if (cs.bubblesCount >= 80)
         {
+            Deployment.deployScript.fishUpgradeButton.GetComponent<Button>().interactable = true;
             cs.bubblesCount -= 80;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(poisonFish, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), selectScript.placementRot);
@@ -99,6 +111,7 @@ public class Deployment : MonoBehaviour
     {
         if (cs.bubblesCount >= 100)
         {
+            Deployment.deployScript.blastUpgradeButton.GetComponent<Button>().interactable = true;
             cs.bubblesCount -= 100;
             Instantiate(buildvfx, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1.75f, selectScript.placementPos.z), Quaternion.identity);
             GameObject child = Instantiate(blastFurnace, new Vector3(selectScript.placementPos.x, selectScript.placementPos.y + 1f, selectScript.placementPos.z), selectScript.placementRot);

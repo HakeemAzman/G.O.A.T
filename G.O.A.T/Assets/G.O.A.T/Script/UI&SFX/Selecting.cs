@@ -48,7 +48,7 @@ public class Selecting : MonoBehaviour
             if (hit)
             {               
                  //Debug.Log(hitGrid.collider.name);
-                    Debug.Log(placementRot);
+                 //Debug.Log(placementRot);
              
                     //Finding object with "deploy" as child
                     if (hitGrid.collider.transform.Find("Deploy"))
@@ -97,7 +97,16 @@ public class Selecting : MonoBehaviour
                         currentlySelected = hitGrid.collider.gameObject;
                     }
                 }
-                
+
+
+                //Finding object with "Snowball" and deploying Turret
+                if (hitGrid.collider.transform.Find("xUpgrade"))
+                {
+                    Deployment.deployScript.snowUpgradeButton.GetComponent<Button>().interactable = false;
+                    Deployment.deployScript.fishUpgradeButton.GetComponent<Button>().interactable = false;
+                    Deployment.deployScript.blastUpgradeButton.GetComponent<Button>().interactable = false;
+                }
+
                 //Finding object with "PoisonFish" and deploying Turret
                 if (hitGrid.collider.tag == "PoisonFish")
                 {

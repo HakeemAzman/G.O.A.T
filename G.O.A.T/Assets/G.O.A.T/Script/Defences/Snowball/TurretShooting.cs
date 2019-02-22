@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+//public enum Towerlevel {Level1, Level2 }
 
 public class TurretShooting : MonoBehaviour
 {
+    //public Towerlevel towerLevel;
+    Deployment deployScript;
     ShootStats ssScript;
     GameObject bullet;
     AudioSource audio;

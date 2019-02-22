@@ -16,6 +16,7 @@ TagManager:
   - PoisonFish
   - PlayerAI
   - Piston
+  - Snowball2
   layers:
   - Default
   - TransparentFX
