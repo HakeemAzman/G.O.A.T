@@ -7,13 +7,16 @@ public class MainMenuTransition : MonoBehaviour {
     Animator m_Anim;
 
     bool m_Settings;
+    bool m_Credits;
     bool m_Encyclopedia;
+
 
 	// Use this for initialization
 	void Start () {
         m_Anim = gameObject.GetComponent<Animator>();
 
         m_Settings = false;
+        m_Credits = false;
         m_Encyclopedia = false;
     }
 	
@@ -23,6 +26,11 @@ public class MainMenuTransition : MonoBehaviour {
             m_Anim.SetBool("SettingsBool", true);
         else
             m_Anim.SetBool("SettingsBool", false);
+
+        if (m_Credits == true)
+            m_Anim.SetBool("CreditsBool", true);
+        else
+            m_Anim.SetBool("CreditsBool", false);
 
         if (m_Encyclopedia == true)
             m_Anim.SetBool("EncyclopediaBool", true);
@@ -37,6 +45,11 @@ public class MainMenuTransition : MonoBehaviour {
         m_Settings = true;
     }
 
+    public void CreditsTransitition()
+    {
+        m_Credits = true;
+    }
+
     public void EncyclopediaTransitition()
     {
         m_Encyclopedia = true;
@@ -47,12 +60,11 @@ public class MainMenuTransition : MonoBehaviour {
         m_Settings = false;
         //m_Anim.SetBool("SettingsBool", false);
 
+        m_Credits = false;
+        // m_Anim.SetBool("EncyclopediaBool", false);
+
         m_Encyclopedia = false;
-       // m_Anim.SetBool("EncyclopediaBool", false);
-
-    }
-
-
+    }   
 
 }
 

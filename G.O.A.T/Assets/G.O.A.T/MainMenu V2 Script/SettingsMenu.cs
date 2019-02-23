@@ -55,7 +55,6 @@ public class SettingsMenu : MonoBehaviour {
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
-
         aS = GetComponent<AudioSource>();
         audioMute = false;
         fullScreenisTrue = true;
@@ -77,21 +76,8 @@ public class SettingsMenu : MonoBehaviour {
         {
             unmuteAudioButton.SetActive(true);
             muteAudioButton.SetActive(false);
-        }
-        
-        if (fullScreenisTrue == true)
-        {
-            fullScreenFalse.SetActive(false);
-            fullScreenTrue.SetActive(true);
-        }
-        else
-        {
-            fullScreenTrue.SetActive(false);
-            fullScreenFalse.SetActive(false);
-        }
-        */
-
-        
+        }        
+         */        
     }
     /*
     public void MuteAudio()
@@ -115,13 +101,7 @@ public class SettingsMenu : MonoBehaviour {
         audioMixer.SetFloat("volume", volume);
         Debug.Log(volume);
     }
-    /*
-    public void SetFullScreen (bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
-        Debug.Log(isFullscreen);
-    }
-    */
+ 
     public void OnFullScreenToggle()
     {
         Screen.fullScreen = fullscreenToggle.isOn;
