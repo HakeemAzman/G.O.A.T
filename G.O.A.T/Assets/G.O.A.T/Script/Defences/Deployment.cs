@@ -42,15 +42,19 @@ public class Deployment : MonoBehaviour
     public GameObject blastfTurn;
     public GameObject blastfUpgrade;
     public GameObject blastfSell;
+    
+    [Header("Sell Sound")]
+    public AudioSource sellAudio;
+    Selecting selectScript;
+
+    [Header("Fast Forward")]
+    public GameObject fastForwardInfo;
+
+    [Space]
 
     CurrencySystem cs;
     AudioSource audio;
-
-    [Header("SellSound")]
-    public AudioSource sellAudio;
-    Selecting selectScript;
     public bool hasDeploy = false;
-
     public static Deployment deployScript;
     #endregion
     
@@ -217,14 +221,12 @@ public class Deployment : MonoBehaviour
     {
         selectScript.hitButton = true;
         snowPanel.SetActive(true);
-        
     }
 
     public void SnowBallCostExit()
     {
         selectScript.hitButton = false;
         snowPanel.SetActive(false);
-  
     }
 
     public void FishCost()
@@ -249,6 +251,16 @@ public class Deployment : MonoBehaviour
     {
         selectScript.hitButton = false;
         blastPanel.SetActive(false);
+    }
+
+    public void FastForwardEnter()
+    {
+        fastForwardInfo.SetActive(true);
+    }
+
+    public void FastForwardExit()
+    {
+        fastForwardInfo.SetActive(false);
     }
     #endregion
 

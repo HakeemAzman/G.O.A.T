@@ -57,10 +57,10 @@ public class OrtographicMovement : MonoBehaviour {
         if (Input.GetMouseButtonUp(1))
             fcmScript.canTurn = true;
 
-        if (Input.GetKey(KeyCode.Q))
+       /* if (Input.GetKey(KeyCode.Q))
             transform.Rotate(turningSpeed * Time.deltaTime, 0, 0, Space.Self);
 
         if (Input.GetKey(KeyCode.E))
-            transform.Rotate(-turningSpeed * Time.deltaTime, 0, 0, Space.Self);
+            transform.Rotate(-turningSpeed * Time.deltaTime, 0, 0, Space.Self); */
     }
 }
